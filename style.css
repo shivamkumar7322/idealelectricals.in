@@ -245,12 +245,12 @@ body {
 }
 
 .btn-outline {
-    background: transparent;
+     background: var(--primary-dark);
     border: 2px solid var(--primary-dark);
-    color: var(--primary-dark);
+    color: white;
     padding: 10px 26px;
     border-radius: 40px 10px;
-    width: 180px;
+    width: 200px;
     display: inline-block;
     text-align: center;
     font-weight: 600;

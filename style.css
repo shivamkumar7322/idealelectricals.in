@@ -55,7 +55,7 @@ body {
 @media (max-width: 768px) {
     .nav-links {
         display: none;
-        /* Default mein menu chhupa rahega */
+       
         flex-direction: column;
         position: absolute;
         top: 70px;
@@ -65,7 +65,7 @@ body {
         padding: 20px;
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     }
-    /* Jab JS se 'active' class add hogi tab menu dikhega */
+    
     .nav-links.active {
         display: flex;
     }
@@ -78,14 +78,14 @@ body {
 }
 
 
-/* Logo container ko flexbox banayenge taaki image aur text side-by-side rahein */
+
 
 .logo {
     display: flex;
     align-items: center;
-    /* Vertical alignment center ke liye */
+   
     gap: 15px;
-    /* Image aur text ke beech thodi jagah */
+   
 }
 
 
@@ -93,34 +93,34 @@ body {
 
 .logo-img {
     height: 50px;
-    /* Navbar ke hisaab se height adjust karein */
+   
     width: auto;
-    /* Width apne aap adjust ho jayegi ratio ke hisaab se */
+  
     border-radius: 50%;
-    /* Image gol dikhegi */
+  
     object-fit: cover;
-    /* Image cut na ho */
+   
     border: 1px solid #ddd;
-    /* Halka border agar image light background par hai */
+   
 }
 
 
-/* Puraane logo text container ka style taaki font issues na hon */
+
 
 .logo-text {
     display: flex;
     flex-direction: column;
-    /* H1 upar aur SPAN niche */
+  
     justify-content: center;
 }
 
 
-/* Puraane HTML se spacing issues the, unhe theek karne ke liye */
+
 
 .logo h1 {
     margin: 0;
     font-size: 20px;
-    /* Agar bada lage toh kam karein */
+   
     line-height: 1.2;
 }
 
@@ -155,25 +155,7 @@ body {
 }
 
 
-/*
-.logo h1 {
-    font-size: 1.7rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, #0a2e4d 0%, #1e4a76 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    letter-spacing: -0.5px;
-}
 
-.logo span {
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--accent-gold);
-    display: block;
-    line-height: 1.2;
-}
-*/
 
 .nav-links {
     display: flex;
@@ -295,10 +277,7 @@ body {
 .hero-badge {
     color: var(--accent-gold);
     font-weight: 700;
-    /*order: 2px solid;
-    padding: 10px 26px;
-    border-radius: 40px;
-     width: 250px;*/
+    
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 0.9rem;
@@ -365,7 +344,7 @@ body {
 @media (max-width: 1024px) {
     .hero-grid {
         flex-direction: column;
-        /* Content aur Stats ek ke niche ek */
+       
         text-align: center;
     }
     .hero {
@@ -402,7 +381,7 @@ body {
 @media (max-width: 480px) {
     .stats-row {
         grid-template-columns: 1fr;
-        /* Sab kuch ek ke niche ek */
+      
     }
     .hero-badge {
         font-size: 0.8rem;
@@ -410,7 +389,7 @@ body {
     .btn-gold,
     .btn-outline {
         width: 100%;
-        /* Full width buttons for easy clicking */
+        
         text-align: center;
     }
 }
@@ -483,7 +462,7 @@ body {
 
 .stats-container {
     background-color: #0a1118;
-    /* Dark Navy Background */
+   
     color: white;
     padding: 30px 50px;
     margin: 30px 50px;
@@ -546,14 +525,14 @@ body {
 @media (max-width: 768px) {
     .main-headingg {
         font-size: 28px;
-        /* Mobile par font chota */
+      
         left: 0;
-        /* Mobile par left 100px hata dein, varna text cut jayega */
+       
         text-align: center;
-        /* Mobile par center alignment zyada achha lagta hai */
+      
         margin: 0 auto 20px;
         padding: 0 15px;
-        /* Side se thodi jagah */
+      
     }
 }
 
@@ -598,7 +577,7 @@ body {
     text-align: center;
     padding: 0 20px;
     border-right: 1px solid rgba(255, 255, 255, 0.1);
-    /* Vertical Dividers */
+   
     width: 25%;
 }
 
@@ -762,7 +741,7 @@ body {
 
 .quote-icon {
     color: #fff9e6;
-    /* Light yellow for big quote */
+  
     font-size: 40px;
     position: absolute;
     top: 20px;
@@ -838,7 +817,7 @@ body {
 
 .sub-heading {
     color: #d4a017;
-    /* Golden yellow color */
+   
     font-weight: 600;
     font-size: 14px;
     letter-spacing: 1px;
@@ -848,7 +827,7 @@ body {
 .main-heading {
     font-size: 32px;
     color: black;
-    /* Dark blue/black */
+
     font-weight: 700;
 }
 
@@ -868,29 +847,29 @@ body {
     gap: 15px;
     flex-wrap: nowrap;
     overflow-x: auto;
-    /* Mobile par scrollable rahega */
+   
     padding-bottom: 20px;
 }
 
 .project-card {
     min-width: 200px;
-    /* Minimum width for images */
+    
     flex: 1;
 }
 
 .project-card img {
     width: 100%;
     height: 250px;
-    /* Fixed height like in screenshot */
+   
     object-fit: cover;
     border-radius: 12px;
-    /* Smooth rounded corners */
+   
     transition: transform 0.3s ease;
 }
 
 .project-card img:hover {
     transform: scale(1.03);
-    /* Hover effect */
+    
 }
 
 .button-container {
@@ -899,7 +878,7 @@ body {
 
 .view-all-btn {
     background-color: #0b1c2c;
-    /* Dark theme button */
+    
     color: white;
     padding: 12px 30px;
     border: none;
@@ -955,13 +934,13 @@ body {
 @media (max-width: 1024px) {
     .testimonial-container {
         flex-wrap: wrap;
-        /* Cards niche shift hone lagenge */
+      
         justify-content: center;
         gap: 15px;
     }
     .testimonial-card {
         width: 45%;
-        /* Ek line mein 2 cards dikhenge */
+       
     }
     .header h2 {
         font-size: 28px;
@@ -974,21 +953,21 @@ body {
 @media (max-width: 768px) {
     .slider-wrapper {
         flex-direction: column;
-        /* Buttons aur Cards upar-niche ho jayenge */
+       
     }
     .nav-btn {
         display: none;
-        /* Mobile par swipe hota hai, buttons hata sakte hain ya chote kar sakte hain */
+      
     }
     .testimonial-container {
         flex-direction: column;
-        /* Cards ek ke niche ek aayenge */
+      
         align-items: center;
         width: 100%;
     }
     .testimonial-card {
         width: 90%;
-        /* Card mobile screen ki puri width lega */
+       
         padding: 20px;
     }
     .header h2 {
@@ -1020,9 +999,9 @@ body {
 
 :root {
     --dark-bg: #0b1522;
-    /* Dark blue background */
+  
     --yellow: #ffcc00;
-    /* Yellow theme color */
+    
     --text-white: #ffffff;
 }
 
@@ -1177,17 +1156,67 @@ body {
 
 /* Mobile Responsive */
 
-@media (max-width: 992px) {
+
+
+@media (max-width: 1024px) {
+    .container-founder {
+        gap: 30px;
+    }
+    .founder-image img {
+        width: 320px;
+    }
+    .founder-content h1 {
+        font-size: 30px;
+    }
+}
+
+
+/* --- Mobile View (Max 768px) --- */
+
+@media (max-width: 768px) {
+    .founder-section {
+        padding: 40px 0;
+    }
     .container-founder {
         flex-direction: column;
         text-align: center;
+    }
+    .founder-image img {
+        width: 280px;
+        margin: 0 auto;
     }
     .features-founder li {
         justify-content: center;
     }
     .founder-info {
         flex-direction: column;
-        gap: 20px;
+        gap: 25px;
+    }
+    .founder-logo-area {
+        margin-top: 30px;
+    }
+    .circular-logo-container {
+        width: 180px;
+        height: 180px;
+    }
+}
+
+
+/* --- Very Small Mobile (Max 480px) --- */
+
+@media (max-width: 480px) {
+    .founder-content h1 {
+        font-size: 24px;
+    }
+    .description {
+        font-size: 13px;
+    }
+    .experience-badge {
+        width: 100%;
+        justify-content: center;
+    }
+    .signature {
+        font-size: 28px;
     }
 }
 
@@ -1286,14 +1315,14 @@ textarea:focus {
     flex: 1;
     min-width: 200px;
     border-right: 1px solid rgba(255, 255, 255, 0.05);
-    /* Divider */
+ 
     padding-right: 20px;
 }
 
 .footer-col:last-child {
     border-right: none;
     flex: 1.5;
-    /* Form column takes more space */
+  
 }
 
 .footer-col h3 {

@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Repair & Maintenance | Electrical Reliability Experts</title>
+    <!-- Google Fonts + Font Awesome 6 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #F5F9FF;
+            color: #1A2E40;
+            line-height: 1.5;
+        }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        /* header */
+        
+        .site-header {
+            background: #0C2E3B;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+            font-weight: 800;
+            font-size: 1.6rem;
+            letter-spacing: -0.4px;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+            color: #F4A261;
+        }
+        
+        .back-link {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 8px 20px;
+            border-radius: 40px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .back-link:hover {
+            background: #F4A261;
+            color: #0C2E3B;
+        }
+        /* hero section with repair-maintenance themed image */
+        
+        .repair-hero {
+            background: linear-gradient(115deg, #164455 0%, #1F6E7A 100%);
+            color: white;
+            padding: 3rem 0 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .repair-hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('image/founder.jpeg');
+            /* repair style: tool/workshop image */
+            background-size: cover;
+            background-position: center 40%;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-badge {
+            background: #F4A26130;
+            backdrop-filter: blur(6px);
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid #F4A261;
+            margin-bottom: 1.2rem;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-content h1 i {
+            color: #F4A261;
+            margin-right: 12px;
+        }
+        
+        .hero-desc {
+            font-size: 1.2rem;
+            color: #e1f0f5;
+            max-width: 680px;
+            margin-bottom: 2rem;
+        }
+        
+        .stats-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+        
+        .stat-item {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            font-size: 1.2rem;
+            font-weight: 500;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #F4A261;
+        }
+        /* section titles */
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 2.8rem 0 1.2rem;
+            position: relative;
+            display: inline-block;
+            color: #1F5068;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 70px;
+            height: 4px;
+            background: #F4A261;
+            border-radius: 6px;
+        }
+        /* description card */
+        
+        .desc-card {
+            background: white;
+            border-radius: 32px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.04);
+            border: 1px solid #eef2f8;
+        }
+        
+        .desc-text {
+            font-size: 1.05rem;
+            color: #2A4D6C;
+            line-height: 1.7;
+        }
+        /* features grid */
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 28px;
+            padding: 1.6rem;
+            transition: 0.25s ease;
+            border: 1px solid #E6EDF6;
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.02);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-6px);
+            border-color: #F4A261;
+            box-shadow: 0 18px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .feature-icon {
+            background: #FFF0E0;
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 32px;
+            margin-bottom: 1.2rem;
+        }
+        
+        .feature-icon i {
+            font-size: 2rem;
+            color: #E76F2D;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.6rem;
+        }
+        
+        .feature-card p {
+            color: #527a9b;
+        }
+        /* project gallery (repair & maintenance theme) */
+        
+        .projects-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .project-item {
+            background: white;
+            border-radius: 30px;
+            overflow: hidden;
+            transition: 0.2s;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.05);
+        }
+        
+        .project-img {
+            height: 210px;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.3s;
+        }
+        
+        .project-item:hover .project-img {
+            transform: scale(1.02);
+        }
+        
+        .project-info {
+            padding: 1.5rem;
+        }
+        
+        .project-tag {
+            background: #EFF6FC;
+            padding: 4px 12px;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #E76F2D;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+        
+        .project-info h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        /* preventive maintenance banner */
+        
+        .pm-banner {
+            background: linear-gradient(105deg, #0f3b44, #1e6b6b);
+            border-radius: 48px;
+            padding: 2.5rem;
+            margin: 2.5rem 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .pm-banner i {
+            font-size: 2.5rem;
+            color: #F4A261;
+        }
+        
+        .pm-banner h3 {
+            font-size: 1.9rem;
+            margin: 0.6rem 0 0.8rem;
+        }
+        
+        .cta-button {
+            background: #F4A261;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #0C2E3B;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 1rem;
+        }
+        
+        .cta-button:hover {
+            background: white;
+            transform: scale(1.02);
+        }
+        
+        footer {
+            background: #0B2A33;
+            color: #C4DFE6;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 700px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <i class="fas fa-tools"></i>
+                <span>REPAIR<span style="color:#F4A261;">&MAINTENANCE</span></span>
+            </div>
+            <a href="#" class="back-link" id="backToServicesBtn"><i class="fas fa-arrow-left"></i> Back to All Services</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with Repair & Maintenance imagery background -->
+        <section class="repair-hero">
+            <div class="container hero-content">
+                <div class="hero-badge"><i class="fas fa-clock"></i> 24/7 Emergency Response | 45 min avg arrival</div>
+                <h1><i class="fas fa-screwdriver-wrench"></i> Repair & Maintenance Portfolio</h1>
+                <p class="hero-desc">Rapid diagnostics, preventive maintenance, panel upgrades, and fault restoration for residential, commercial & industrial systems. Minimize downtime with our certified electricians.</p>
+                <div class="stats-row">
+                    <div class="stat-item"><span class="stat-number">2,300+</span> <span>Repairs completed</span></div>
+                    <div class="stat-item"><span class="stat-number">98%</span> <span>First-visit fix rate</span></div>
+                    <div class="stat-item"><span class="stat-number">24/7</span> <span>On-call support</span></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Description -->
+            <div class="desc-card">
+                <h2 class="section-title">⚡ Comprehensive Electrical Care</h2>
+                <div class="desc-text">
+                    From flickering lights to complete panel failures, we deliver precision troubleshooting and lasting repairs. Our maintenance programs include thermal imaging, load testing, and code-compliance upgrades. We service homes, offices, factories, and retail
+                    spaces — ensuring safety, reliability, and extended equipment life. Preventive maintenance reduces unexpected breakdowns by up to 78%.
+                </div>
+            </div>
+
+            <!-- Core service features -->
+            <h2 class="section-title">🔧 What We Offer</h2>
+            <div class="features-grid" id="featuresGrid"></div>
+
+            <!-- Real projects gallery (Repair & Maintenance type images) -->
+            <h2 class="section-title">🛠️ Featured Repair & Maintenance Projects</h2>
+            <div class="projects-gallery" id="projectsGallery"></div>
+
+            <!-- Tools and tech showcase -->
+            <div style="background: #ffffff; border-radius: 32px; padding: 1.8rem; margin: 1.5rem 0;">
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem;"><i class="fas fa-microscope"></i> Diagnostic & Maintenance Tools</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 12px;">
+                    <span style="background:#EEF3F9; padding: 6px 18px; border-radius: 60px;"><i class="fas fa-temperature-high"></i> Thermal Imaging Cameras</span>
+                    <span style="background:#EEF3F9; padding: 6px 18px; border-radius: 60px;"><i class="fas fa-waveform"></i> Oscilloscopes & Multimeters</span>
+                    <span style="background:#EEF3F9; padding: 6px 18px; border-radius: 60px;"><i class="fas fa-charging-station"></i> Load Bank Testers</span>
+                    <span style="background:#EEF3F9; padding: 6px 18px; border-radius: 60px;"><i class="fas fa-shield-alt"></i> Circuit Analyzers</span>
+                    <span style="background:#EEF3F9; padding: 6px 18px; border-radius: 60px;"><i class="fas fa-bolt"></i> Insulation Resistance Testers</span>
+                </div>
+            </div>
+
+            <!-- Preventive maintenance CTA -->
+            <div class="pm-banner">
+                <i class="fas fa-calendar-check"></i>
+                <h3>Preventive Maintenance Plans</h3>
+                <p>Annual contracts, quarterly inspections, and priority dispatch. Reduce downtime and save up to 35% on emergency costs.</p>
+                <button class="cta-button" id="maintenanceCtaBtn"><i class="fas fa-headset"></i> Request a Maintenance Quote</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p><i class="fas fa-hard-hat"></i> Certified & Insured | 24/7 Emergency Repair | Satisfaction Guaranteed</p>
+        <p style="margin-top: 10px;">📞 +91 90285 88822 | ✉️ repair@info@idealelectricals.com | © 2026 Repair & Maintenance Portfolio by rony singh</p>
+    </footer>
+
+    <script>
+        // Data for repair & maintenance specific features
+        const repairFeatures = [{
+            icon: "fas fa-bug",
+            title: "Fault Diagnosis",
+            desc: "Advanced troubleshooting for short circuits, overloads, and ground faults."
+        }, {
+            icon: "fas fa-exchange-alt",
+            title: "Panel Upgrades",
+            desc: "Old fuse box to modern breaker panel replacement."
+        }, {
+            icon: "fas fa-charging-station",
+            title: "Emergency Repairs",
+            desc: "24/7 rapid response for power outages & critical failures."
+        }, {
+            icon: "fas fa-chart-line",
+            title: "Predictive Maintenance",
+            desc: "Thermal scanning and load analysis to prevent failures."
+        }, {
+            icon: "fas fa-microchip",
+            title: "Control System Repair",
+            desc: "PLC, relays, and industrial controller restoration."
+        }, {
+            icon: "fas fa-plug",
+            title: "Wiring & Rewiring",
+            desc: "Full or partial rewiring for safety and capacity."
+        }];
+
+        // Project gallery data - images reflect repair/maintenance (workshop, fixing, electrician)
+        const repairProjects = [{
+            name: "Main Street Mall Power Restoration",
+            category: "Commercial Repair",
+            img: "image/Repair & Maintenance.png",
+            desc: "Complete fault diagnosis and panel replacement after a major outage. Restored full power within 6 hours."
+        }, {
+            name: "Residential Emergency Rewire",
+            category: "Home Maintenance",
+            img: "image/Industrial.jpg",
+            desc: "Old aluminum wiring replaced with copper, upgraded breaker box, and surge protection."
+        }, {
+            name: "Factory Conveyor Motor Repair",
+            category: "Industrial",
+            img: "image/electric work.jpg",
+            desc: "Rapid VFD replacement and thermal imaging to prevent future overheating."
+        }, {
+            name: "Office Complex Preventive Audit",
+            category: "Maintenance Contract",
+            img: "image/founder.jpeg",
+            desc: "Quarterly inspection, load balancing, and emergency lighting system upgrade."
+        }];
+
+        // Render features
+        function renderRepairFeatures() {
+            const container = document.getElementById('featuresGrid');
+            if (!container) return;
+            container.innerHTML = '';
+            repairFeatures.forEach(f => {
+                const card = document.createElement('div');
+                card.className = 'feature-card';
+                card.innerHTML = `
+        <div class="feature-icon"><i class="${f.icon}"></i></div>
+        <h3>${f.title}</h3>
+        <p>${f.desc}</p>
+      `;
+                container.appendChild(card);
+            });
+        }
+
+        // Render project gallery with repair/maintenance style images (picsum but themed alt text)
+        function renderRepairProjects() {
+            const galleryContainer = document.getElementById('projectsGallery');
+            if (!galleryContainer) return;
+            galleryContainer.innerHTML = '';
+            repairProjects.forEach(proj => {
+                const projectDiv = document.createElement('div');
+                projectDiv.className = 'project-item';
+                projectDiv.innerHTML = `
+        <div class="project-img" style="background-image: url('${proj.img}'); background-size: cover; background-position: center;"></div>
+        <div class="project-info">
+          <span class="project-tag"><i class="fas fa-wrench"></i> ${proj.category}</span>
+          <h4>${proj.name}</h4>
+          <p style="color: #4d6a8a;">${proj.desc}</p>
+        </div>
+      `;
+                galleryContainer.appendChild(projectDiv);
+            });
+        }
+
+        // Initialize and event handlers
+        renderRepairFeatures();
+        renderRepairProjects();
+
+        // CTA button alert (repair & maintenance consultation)
+        const ctaBtn = document.getElementById('maintenanceCtaBtn');
+        if (ctaBtn) {
+            ctaBtn.addEventListener('click', () => {
+                alert("🔧 Repair & Maintenance team — Get a quote within 2 hours.\n📞 Call: +91 90285 88822\n📧 repair@info@idealelectricals.com\nAvailable 24/7 for emergencies.");
+            });
+        }
+
+        // Back to services link (simulate navigation / info)
+        const backButton = document.getElementById('backToServicesBtn');
+        if (backButton) {
+            backButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert("↩️ Return to main services dashboard. (Standalone Repair & Maintenance portfolio page)");
+                // optionally, window.history.back() but just informative.
+            });
+        }
+
+        // Additional hover tooltip effect for stat items
+        console.log("Repair & Maintenance Portfolio — Ready for 24/7 electrical service.");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Solar Panel Setup | Clean Energy Portfolio</title>
+    <!-- Google Fonts + Font Awesome 6 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #F6FBF8;
+            color: #1A3F2C;
+            line-height: 1.5;
+        }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        /* header */
+        
+        .site-header {
+            background: #0F2A1F;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+            font-weight: 800;
+            font-size: 1.6rem;
+            letter-spacing: -0.4px;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+            color: #F4C542;
+        }
+        
+        .back-link {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 8px 20px;
+            border-radius: 40px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .back-link:hover {
+            background: #F4C542;
+            color: #0F2A1F;
+        }
+        /* hero section with solar panel background */
+        
+        .solar-hero {
+            background: linear-gradient(125deg, #1B4D2E 0%, #2C7A47 100%);
+            color: white;
+            padding: 3rem 0 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .solar-hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://wallpaperaccess.com/full/1663640.jpg');
+            /* solar panel field */
+            background-size: cover;
+            background-position: center 30%;
+            opacity: 0.2;
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-badge {
+            background: #F4C54230;
+            backdrop-filter: blur(4px);
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid #F4C542;
+            margin-bottom: 1.2rem;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.1rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-content h1 i {
+            color: #F4C542;
+            margin-right: 12px;
+        }
+        
+        .hero-desc {
+            font-size: 1.2rem;
+            color: #E0F2E6;
+            max-width: 680px;
+            margin-bottom: 2rem;
+        }
+        
+        .stats-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        
+        .stat-item {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #F4C542;
+        }
+        /* section titles */
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1.2rem;
+            position: relative;
+            display: inline-block;
+            color: #1B5E3A;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 70px;
+            height: 4px;
+            background: #F4C542;
+            border-radius: 6px;
+        }
+        /* description card */
+        
+        .desc-card {
+            background: white;
+            border-radius: 32px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04);
+            border: 1px solid #DFEFE5;
+        }
+        
+        .desc-text {
+            font-size: 1.05rem;
+            color: #2D6A48;
+            line-height: 1.7;
+        }
+        /* features grid */
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 28px;
+            padding: 1.6rem;
+            transition: all 0.25s;
+            border: 1px solid #E0F0E8;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-6px);
+            border-color: #F4C542;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .feature-icon {
+            background: #FEF5E3;
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 32px;
+            margin-bottom: 1.2rem;
+        }
+        
+        .feature-icon i {
+            font-size: 2rem;
+            color: #E69A2E;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.6rem;
+        }
+        /* project gallery with solar imagery */
+        
+        .projects-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0 2.5rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            transition: 0.2s;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+        }
+        
+        .project-img {
+            height: 210px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .project-info {
+            padding: 1.5rem;
+        }
+        
+        .project-tag {
+            background: #F0F7F2;
+            padding: 4px 12px;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #2C7A47;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+        
+        .project-info h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.4rem;
+        }
+        /* tech & equipment */
+        
+        .tech-showcase {
+            background: #ffffff;
+            border-radius: 32px;
+            padding: 1.8rem;
+            margin: 1.5rem 0;
+        }
+        
+        .tech-badge {
+            background: #EDF9F2;
+            padding: 8px 18px;
+            border-radius: 60px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0.3rem;
+        }
+        /* cta banner */
+        
+        .cta-banner {
+            background: linear-gradient(105deg, #1C5A38, #2E8B57);
+            border-radius: 48px;
+            padding: 2.5rem;
+            margin: 2rem 0 2.5rem;
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-banner i {
+            font-size: 2.5rem;
+            color: #F4C542;
+        }
+        
+        .cta-button {
+            background: #F4C542;
+            border: none;
+            padding: 12px 34px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #1A3F2C;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 1rem;
+        }
+        
+        .cta-button:hover {
+            background: white;
+            transform: scale(1.02);
+        }
+        
+        footer {
+            background: #0C2419;
+            color: #C4E0D4;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 700px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <i class="fas fa-solar-panel"></i>
+                <span>Solar<span style="color:#F4C542;">Volt</span></span>
+            </div>
+            <a href="#" class="back-link" id="backToServicesLink"><i class="fas fa-arrow-left"></i> Back to All Services</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with solar panel imagery -->
+        <section class="solar-hero">
+            <div class="container hero-content">
+                <div class="hero-badge"><i class="fas fa-sun"></i> Grid-Tied & Off-Grid | Net Metering | 25Y Warranty</div>
+                <h1><i class="fas fa-solar-panel"></i> Solar Panel Setup Portfolio</h1>
+                <p class="hero-desc">High-efficiency photovoltaic systems for residential, commercial, and agricultural use. Reduce energy bills, carbon footprint, and gain energy independence with our turnkey solar solutions.</p>
+                <div class="stats-row">
+                    <div class="stat-item"><span class="stat-number">8.2 MW</span> <span>Installed Capacity</span></div>
+                    <div class="stat-item"><span class="stat-number">1,400+</span> <span>Projects Completed</span></div>
+                    <div class="stat-item"><span class="stat-number">35%</span> <span>Avg. Energy Saving</span></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Description -->
+            <div class="desc-card">
+                <h2 class="section-title">☀️ Clean Energy, Reliable Power</h2>
+                <div class="desc-text">
+                    We engineer, install, and maintain solar PV systems tailored to your energy needs. From rooftop residential arrays to ground-mount commercial plants, we handle permitting, net metering, battery storage, and performance monitoring. Our certified team uses
+                    premium monocrystalline panels, hybrid inverters, and robust mounting structures for maximum yield (up to 22% efficiency). Zero upfront options available.
+                </div>
+            </div>
+
+            <!-- Core Solar Features -->
+            <h2 class="section-title">⚡ Solar Capabilities</h2>
+            <div class="features-grid" id="featuresGrid"></div>
+
+            <!-- Solar Project Gallery (solar theme images) -->
+            <h2 class="section-title">🏡 Deployed Solar Installations</h2>
+            <div class="projects-gallery" id="projectsGallery"></div>
+
+            <!-- Technology & Equipment -->
+            <div class="tech-showcase">
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem;"><i class="fas fa-microchip"></i> Premium Solar Components</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                    <span class="tech-badge"><i class="fas fa-bolt"></i> Monocrystalline PERC Panels</span>
+                    <span class="tech-badge"><i class="fas fa-car-battery"></i> Lithium-Ion Battery Storage</span>
+                    <span class="tech-badge"><i class="fas fa-charging-station"></i> Hybrid / String Inverters</span>
+                    <span class="tech-badge"><i class="fas fa-chart-line"></i> Real-time Monitoring App</span>
+                    <span class="tech-badge"><i class="fas fa-plug"></i> EV Charger Integration</span>
+                    <span class="tech-badge"><i class="fas fa-shield-alt"></i> 25-Year Linear Performance Warranty</span>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="cta-banner">
+                <i class="fas fa-leaf"></i>
+                <h3>Go Solar Today — Zero Downpayment Options</h3>
+                <p>Free energy audit, custom design, and savings estimate. Start saving from day one.</p>
+                <button class="cta-button" id="solarCtaBtn"><i class="fas fa-calculator"></i> Get Free Solar Quote</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p><i class="fas fa-certificate"></i> NABCEP Certified Installers | 24/7 Performance Monitoring | Tax Credit Assistance</p>
+        <p style="margin-top: 10px;">📞 +1 (877) 440-SOLAR | ✉️ solar@electrosolar.com | © 2026 Solar Panel Setup Portfolio</p>
+    </footer>
+
+    <script>
+        // Solar-specific feature data
+        const solarFeatures = [{
+            icon: "fas fa-chart-line",
+            title: "High-Efficiency Panels",
+            desc: "Monocrystalline 550W+ panels with 22.5% efficiency and low-light performance."
+        }, {
+            icon: "fas fa-car-battery",
+            title: "Battery Backup Ready",
+            desc: "Scalable lithium storage for night use and grid outage resilience."
+        }, {
+            icon: "fas fa-wifi",
+            title: "Smart Monitoring",
+            desc: "Real-time production & consumption tracking via mobile app."
+        }, {
+            icon: "fas fa-hand-holding-usd",
+            title: "Net Metering & Incentives",
+            desc: "Full support for utility interconnection and federal tax credits."
+        }, {
+            icon: "fas fa-charging-station",
+            title: "EV Integration",
+            desc: "Combine solar + EV charger for complete home energy ecosystem."
+        }, {
+            icon: "fas fa-shield-alt",
+            title: "Structural Integrity",
+            desc: "Engineered mounting, wind/snow load certified."
+        }];
+
+        // Solar projects gallery with solar-related imagery (via picsum but thematic)
+        const solarProjects = [{
+            name: "Greenfield Residential Rooftop",
+            category: "Residential 8kWp",
+            img: "https://wallpaperaccess.com/full/1663640.jpg",
+            desc: "Monocrystalline panels on pitched roof, hybrid inverter, and mobile monitoring — saving 90% of electricity bill."
+        }, {
+            name: "SunAgri Farm Solar Pump",
+            category: "Agricultural",
+            img: "https://tse2.mm.bing.net/th/id/OIP.HvEJZnvv1gRs7i132e3msgHaDu?pid=Api&h=220&P=0",
+            desc: "25kW solar water pumping system with subsidy support and drip irrigation integration."
+        }, {
+            name: "EcoTech Industrial Rooftop",
+            category: "Commercial 500kW",
+            img: "https://www.nivaecotech.com/rooftop/solarRooftop.jpg",
+            desc: "Grid-tied system with net metering, annual CO₂ reduction of 320 tons."
+        }, {
+            name: "Solar Carport + Storage",
+            category: "Public Infrastructure",
+            img: "https://www.zeconex.com/wp-content/uploads/Solar-Carport-with-EV-Charger-and-Battery-Storage-.jpg",
+            desc: "Double-sided bifacial panels + 200kWh battery for municipal EV fleet."
+        }];
+
+        // Render features
+        function renderFeatures() {
+            const container = document.getElementById('featuresGrid');
+            if (!container) return;
+            container.innerHTML = '';
+            solarFeatures.forEach(f => {
+                const card = document.createElement('div');
+                card.className = 'feature-card';
+                card.innerHTML = `
+        <div class="feature-icon"><i class="${f.icon}"></i></div>
+        <h3>${f.title}</h3>
+        <p style="color: #4B7B60;">${f.desc}</p>
+      `;
+                container.appendChild(card);
+            });
+        }
+
+        // Render project gallery
+        function renderProjects() {
+            const galleryContainer = document.getElementById('projectsGallery');
+            if (!galleryContainer) return;
+            galleryContainer.innerHTML = '';
+            solarProjects.forEach(proj => {
+                const projectDiv = document.createElement('div');
+                projectDiv.className = 'project-card';
+                projectDiv.innerHTML = `
+        <div class="project-img" style="background-image: url('${proj.img}'); background-size: cover; background-position: center;"></div>
+        <div class="project-info">
+          <span class="project-tag"><i class="fas fa-solar-panel"></i> ${proj.category}</span>
+          <h4>${proj.name}</h4>
+          <p style="color: #4B7B60;">${proj.desc}</p>
+        </div>
+      `;
+                galleryContainer.appendChild(projectDiv);
+            });
+        }
+
+        // Initialize page
+        renderFeatures();
+        renderProjects();
+
+        // CTA button interaction
+        const ctaBtn = document.getElementById('solarCtaBtn');
+        if (ctaBtn) {
+            ctaBtn.addEventListener('click', () => {
+                alert("☀️ Solar assessment request:\n📞 +91 90285 88822\n✉️ solar@info@idealelectricals.com\nWe’ll provide a free custom design & savings estimate within 24h.");
+            });
+        }
+
+        // Back to services navigation (informational)
+        const backLink = document.getElementById('backToServicesLink');
+        if (backLink) {
+            backLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert("↩️ Return to main services overview. (Solar Panel Setup standalone portfolio)");
+            });
+        }
+
+        console.log("Solar Panel Setup Portfolio — Clean energy installations ready.");
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Industrial Work Portfolio | Heavy Electrical Solutions</title>
+    <!-- Google Fonts + Font Awesome 6 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #F4F8FE;
+            color: #121f2f;
+            line-height: 1.5;
+        }
+        /* container */
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+        /* header */
+        
+        .site-header {
+            background: #0B1C2A;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+            font-weight: 800;
+            font-size: 1.6rem;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+            color: #F5B042;
+        }
+        
+        .back-link {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 8px 20px;
+            border-radius: 40px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .back-link:hover {
+            background: #F5B042;
+            color: #0B1C2A;
+        }
+        /* hero industrial */
+        
+        .industrial-hero {
+            background: linear-gradient(105deg, #0F2A3B 0%, #1F4A6E 100%);
+            color: white;
+            padding: 3.5rem 0 3rem;
+            border-bottom: 4px solid #F5B042;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 1.2rem;
+        }
+        
+        .hero-content h1 i {
+            color: #F5B042;
+            margin-right: 12px;
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: #F5B04220;
+            backdrop-filter: blur(4px);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid #F5B042;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-desc {
+            font-size: 1.2rem;
+            color: #E0EDF9;
+            max-width: 700px;
+            margin-bottom: 1.8rem;
+        }
+        
+        .stats-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #F5B042;
+        }
+        /* section style */
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1.2rem;
+            position: relative;
+            display: inline-block;
+            color: #1e3a5f;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 70px;
+            height: 4px;
+            background: #F5B042;
+            border-radius: 4px;
+        }
+        
+        .service-description {
+            background: white;
+            border-radius: 32px;
+            padding: 2rem;
+            margin: 1.8rem 0;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.05);
+        }
+        
+        .desc-text {
+            font-size: 1.05rem;
+            color: #2c4c6e;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+        /* features grid */
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 1.8rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 26px;
+            padding: 1.6rem;
+            transition: all 0.25s;
+            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.03);
+            border: 1px solid #eef2f9;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-6px);
+            border-color: #F5B042;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .feature-icon {
+            background: #FFEAD2;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+            margin-bottom: 1.2rem;
+        }
+        
+        .feature-icon i {
+            font-size: 2rem;
+            color: #E67E22;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.6rem;
+        }
+        /* project gallery */
+        
+        .gallery-showcase {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.8rem;
+            margin: 2rem 0;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 12px 26px rgba(0, 0, 0, 0.08);
+            transition: 0.2s;
+        }
+        
+        .project-img {
+            height: 220px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .project-info {
+            padding: 1.4rem;
+        }
+        
+        .project-info h4 {
+            font-size: 1.3rem;
+            margin-bottom: 0.4rem;
+        }
+        
+        .project-tag {
+            display: inline-block;
+            background: #EDF4FC;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #1e5a7a;
+        }
+        /* full width banner */
+        
+        .cta-industrial {
+            background: linear-gradient(95deg, #102b3b, #1b4c6e);
+            border-radius: 48px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-industrial h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .cta-button {
+            background: #F5B042;
+            border: none;
+            padding: 14px 36px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #0B1C2A;
+            cursor: pointer;
+            transition: 0.2s;
+            margin-top: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .cta-button:hover {
+            background: white;
+            transform: scale(1.02);
+        }
+        
+        footer {
+            background: #07131E;
+            color: #b2c9db;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 700px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .section-title {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <i class="fas fa-industry"></i>
+                <span>INDUSTRIAL<span style="color:#F5B042;">POWER</span></span>
+            </div>
+            <a href="#" class="back-link" id="backToMainLink"><i class="fas fa-arrow-left"></i> Back to All Services</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="industrial-hero">
+            <div class="container hero-content">
+                <div class="hero-badge"><i class="fas fa-bolt"></i> SINCE 2008 | HEAVY ELECTRICAL</div>
+                <h1><i class="fas fa-microchip"></i> Industrial Work Portfolio</h1>
+                <p class="hero-desc">High-voltage installations, motor control centers, plant automation, and industrial-grade power systems. We engineer reliability for factories, warehouses, and heavy industries.</p>
+                <div class="stats-row">
+                    <div class="stat-item"><span class="stat-number">250+</span> <span>Industrial Projects</span></div>
+                    <div class="stat-item"><span class="stat-number">99.7%</span> <span>Uptime Record</span></div>
+                    <div class="stat-item"><span class="stat-number">24/7</span> <span>Emergency Support</span></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Detailed description -->
+            <div class="service-description">
+                <h2 class="section-title">⚙️ End-to-End Industrial Electrification</h2>
+                <div class="desc-text">
+                    From heavy machinery wiring to complete plant load management, we deliver robust electrical infrastructure. Our certified industrial electricians handle 3-phase distribution, VFDs, MCC panels, and safety compliance. Using modern diagnostic tools, we minimize
+                    production downtime and ensure long-term operational efficiency. Projects range from automotive assembly lines to steel plants and food processing units.
+                </div>
+            </div>
+
+            <!-- Core capabilities -->
+            <h2 class="section-title">🔧 Core Industrial Capabilities</h2>
+            <div class="features-grid" id="featuresGrid"></div>
+
+            <!-- Featured Projects Gallery -->
+            <h2 class="section-title">🏭 Featured Industrial Projects</h2>
+            <div class="gallery-showcase" id="projectsGallery"></div>
+
+            <!-- Industrial Equipment & tech -->
+            <div style="background: #ffffff; border-radius: 32px; padding: 2rem; margin: 2rem 0;">
+                <h3 style="font-size: 1.7rem; margin-bottom: 1rem;"><i class="fas fa-charging-station"></i> Technology & Equipment</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem;">
+                    <span style="background:#EFF3F8; padding: 8px 18px; border-radius: 60px;"><i class="fas fa-microchip"></i> PLC/HMI Integration</span>
+                    <span style="background:#EFF3F8; padding: 8px 18px; border-radius: 60px;"><i class="fas fa-tachometer-alt"></i> SCADA Systems</span>
+                    <span style="background:#EFF3F8; padding: 8px 18px; border-radius: 60px;"><i class="fas fa-tower-broadcast"></i> Power Monitoring</span>
+                    <span style="background:#EFF3F8; padding: 8px 18px; border-radius: 60px;"><i class="fas fa-shield-alt"></i> Arc Flash Analysis</span>
+                    <span style="background:#EFF3F8; padding: 8px 18px; border-radius: 60px;"><i class="fas fa-solar-panel"></i> Industrial Solar Integration</span>
+                </div>
+            </div>
+
+            <!-- CTA section -->
+            <div class="cta-industrial">
+                <i class="fas fa-headset" style="font-size: 2.5rem; margin-bottom: 0.5rem;"></i>
+                <h3>Need a custom industrial solution?</h3>
+                <p style="margin-bottom: 1rem;">From 440V to 33kV — Let’s electrify your next industrial project with precision.</p>
+                <button class="cta-button" id="contactCtaBtn"><i class="fas fa-phone-alt"></i> Request Consultation →</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p><i class="fas fa-hard-hat"></i> Industrial Work Portfolio | Certified Engineers | ISO 9001:2024</p>
+        <p style="margin-top: 12px; font-size: 0.85rem;">© 2026 IndustrialPower — High Voltage Expertise. Contact: industrialinfo@idealelectricals.com | +91 90285 88822</p>
+    </footer>
+
+    <script>
+        // Data for features & projects (industrial focused)
+        const industrialFeatures = [{
+            icon: "fas fa-charging-station",
+            title: "3-Phase Panel Design",
+            desc: "Complete MCC & PCC panels with smart breakers."
+        }, {
+            icon: "fas fa-microchip",
+            title: "VFD & Motor Control",
+            desc: "Energy efficient VFD integration for heavy motors."
+        }, {
+            icon: "fas fa-shield-virus",
+            title: "Load Management",
+            desc: "Power factor correction & harmonic filtering."
+        }, {
+            icon: "fas fa-hard-hat",
+            title: "Hazardous Area Wiring",
+            desc: "Explosion-proof installations (Class I/II)."
+        }, {
+            icon: "fas fa-chart-line",
+            title: "Industrial Automation",
+            desc: "PLC / SCADA ready infrastructure."
+        }, {
+            icon: "fas fa-sync-alt",
+            title: "Preventive Maintenance",
+            desc: "Thermal scanning & predictive diagnostics."
+        }];
+
+        const industrialProjects = [{
+            name: "Steel Plant MCC Upgrade",
+            category: "Heavy Industry",
+            img: "image/indsrtial.png",
+            desc: "Complete replacement of motor control center with smart relays + remote monitoring."
+        }, {
+            name: "Auto Assembly Line Electrification",
+            category: "Automotive",
+            img: "image/Industrial.jpg",
+            desc: "3-phase distribution and robotic welding power supply."
+        }, {
+            name: "Food Processing Unit Power Revamp",
+            category: "Manufacturing",
+            img: "image/interior.jpg",
+            desc: "Energy audit + new VFDs for conveyor systems saved 22% energy."
+        }, {
+            name: "Warehouse & Logistics Grid",
+            category: "Logistics",
+            img: "image/electrical.png",
+            desc: "High mast lighting, EV charging infrastructure & UPS systems."
+        }];
+
+        // render features
+        function renderFeatures() {
+            const container = document.getElementById('featuresGrid');
+            if (!container) return;
+            container.innerHTML = '';
+            industrialFeatures.forEach(f => {
+                const card = document.createElement('div');
+                card.className = 'feature-card';
+                card.innerHTML = `
+        <div class="feature-icon"><i class="${f.icon}"></i></div>
+        <h3>${f.title}</h3>
+        <p style="color: #4F6F8F;">${f.desc}</p>
+      `;
+                container.appendChild(card);
+            });
+        }
+
+        // render project gallery
+        function renderProjects() {
+            const gallery = document.getElementById('projectsGallery');
+            if (!gallery) return;
+            gallery.innerHTML = '';
+            industrialProjects.forEach(proj => {
+                const card = document.createElement('div');
+                card.className = 'project-card';
+                card.innerHTML = `
+        <div class="project-img" style="background-image: url('${proj.img}'); background-size: cover;"></div>
+        <div class="project-info">
+          <span class="project-tag"><i class="fas fa-industry"></i> ${proj.category}</span>
+          <h4>${proj.name}</h4>
+          <p style="color: #5c6f87; margin-top: 6px;">${proj.desc}</p>
+        </div>
+      `;
+                gallery.appendChild(card);
+            });
+        }
+
+        // Interactive contact / alert (for demo)
+        const contactBtn = document.getElementById('contactCtaBtn');
+        if (contactBtn) {
+            contactBtn.addEventListener('click', () => {
+                alert("📞 Industrial Work consultation:\nCall +91 90285 88822-HEAVY\nEmail: industrialinfo@idealelectricals.com\nWe'll respond within 2 hours.");
+            });
+        }
+
+        // back to services link - show a message and simulate return (since standalone portfolio, we can link to previous context or just show information)
+        const backLink = document.getElementById('backToMainLink');
+        if (backLink) {
+            backLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert("↩️ Navigate back to master services page.\n(Industrial Portfolio standalone - you can close or use browser back)");
+                // optionally redirect to a dummy index if needed, but for standalone we just inform.
+            });
+        }
+
+        // render on load
+        renderFeatures();
+        renderProjects();
+
+        // add animation & interactive hover for project images (optional)
+        console.log("Industrial Work Portfolio — Heavy electrical solutions");
+    </script>
+</body>
+
+</html>

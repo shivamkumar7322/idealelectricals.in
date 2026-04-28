@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>CCTV Installation | Security & Surveillance Portfolio</title>
+    <!-- Google Fonts + Font Awesome 6 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #F5F9FE;
+            color: #102B3C;
+            line-height: 1.5;
+        }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        /* header */
+        
+        .site-header {
+            background: #0A1C2A;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+            font-weight: 800;
+            font-size: 1.6rem;
+            letter-spacing: -0.4px;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+            color: #2A9D8F;
+        }
+        
+        .back-link {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 8px 20px;
+            border-radius: 40px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .back-link:hover {
+            background: #2A9D8F;
+            color: #0A1C2A;
+        }
+        /* hero section with CCTV themed overlay image */
+        
+        .cctv-hero {
+            background: linear-gradient(125deg, #0F2E3F 0%, #1C4F64 100%);
+            color: white;
+            padding: 3rem 0 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cctv-hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://d34mfkth6cubud.cloudfront.net/wp-content/uploads/2022/09/15033702/CCTV-Companies-in-Dubai-_-Body-4-14-9-22-1024x640.jpg');
+            /* camera / security related */
+            background-size: cover;
+            background-position: center 30%;
+            opacity: 0.18;
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-badge {
+            background: #2A9D8F30;
+            backdrop-filter: blur(4px);
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid #2A9D8F;
+            margin-bottom: 1.2rem;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.1rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-content h1 i {
+            color: #2A9D8F;
+            margin-right: 12px;
+        }
+        
+        .hero-desc {
+            font-size: 1.2rem;
+            color: #DBEEF7;
+            max-width: 680px;
+            margin-bottom: 2rem;
+        }
+        
+        .stats-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        
+        .stat-item {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #2A9D8F;
+        }
+        /* section titles */
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1.2rem;
+            position: relative;
+            display: inline-block;
+            color: #1A5D6E;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 70px;
+            height: 4px;
+            background: #2A9D8F;
+            border-radius: 6px;
+        }
+        /* description card */
+        
+        .desc-card {
+            background: white;
+            border-radius: 32px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04);
+            border: 1px solid #E2EDF6;
+        }
+        
+        .desc-text {
+            font-size: 1.05rem;
+            color: #2A5778;
+            line-height: 1.7;
+        }
+        /* features grid */
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 28px;
+            padding: 1.6rem;
+            transition: all 0.25s;
+            border: 1px solid #EAF0F8;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-6px);
+            border-color: #2A9D8F;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .feature-icon {
+            background: #E0F2EF;
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 32px;
+            margin-bottom: 1.2rem;
+        }
+        
+        .feature-icon i {
+            font-size: 2rem;
+            color: #2A9D8F;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.6rem;
+        }
+        /* project gallery with CCTV installation imagery */
+        
+        .projects-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0 2.5rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            transition: 0.2s;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+        }
+        
+        .project-img {
+            height: 210px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .project-info {
+            padding: 1.5rem;
+        }
+        
+        .project-tag {
+            background: #E9F3F1;
+            padding: 4px 12px;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #1F7A6B;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+        
+        .project-info h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.4rem;
+        }
+        /* tech stack */
+        
+        .tech-showcase {
+            background: #ffffff;
+            border-radius: 32px;
+            padding: 1.8rem;
+            margin: 1.5rem 0;
+        }
+        
+        .tech-badge {
+            background: #F0F6FA;
+            padding: 8px 18px;
+            border-radius: 60px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0.3rem;
+        }
+        /* cta banner */
+        
+        .cta-banner {
+            background: linear-gradient(105deg, #114B5F, #1B6A7A);
+            border-radius: 48px;
+            padding: 2.5rem;
+            margin: 2rem 0 2.5rem;
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-banner i {
+            font-size: 2.5rem;
+            color: #2A9D8F;
+        }
+        
+        .cta-button {
+            background: #2A9D8F;
+            border: none;
+            padding: 12px 34px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #0A1C2A;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 1rem;
+        }
+        
+        .cta-button:hover {
+            background: white;
+            transform: scale(1.02);
+        }
+        
+        footer {
+            background: #0B222E;
+            color: #C4DFE6;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 700px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <i class="fas fa-video"></i>
+                <span>CCTV<span style="color:#2A9D8F;">Secure</span></span>
+            </div>
+            <a href="#" class="back-link" id="backToServicesLink"><i class="fas fa-arrow-left"></i> Back to All Services</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with CCTV camera imagery -->
+        <section class="cctv-hero">
+            <div class="container hero-content">
+                <div class="hero-badge"><i class="fas fa-shield-alt"></i> 4K UHD | AI Motion Detection | Cloud Ready</div>
+                <h1><i class="fas fa-camera"></i> CCTV Installation Portfolio</h1>
+                <p class="hero-desc">End-to-end surveillance solutions: IP cameras, NVR/DVR systems, remote monitoring, and intelligent analytics. Protecting businesses, homes, and industrial sites with cutting-edge security.</p>
+                <div class="stats-row">
+                    <div class="stat-item"><span class="stat-number">1,200+</span> <span>Cameras Installed</span></div>
+                    <div class="stat-item"><span class="stat-number">500+</span> <span>Sites Secured</span></div>
+                    <div class="stat-item"><span class="stat-number">24/7</span> <span>Remote Support</span></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Description -->
+            <div class="desc-card">
+                <h2 class="section-title">📹 Professional Surveillance Solutions</h2>
+                <div class="desc-text">
+                    From HD IP cameras to advanced AI-based analytics, we design and install customized CCTV systems for retail, corporate, industrial, and residential properties. Our solutions include night vision, motion alerts, cloud backup, and mobile access — giving
+                    you real-time security from anywhere. All installations follow strict safety and privacy standards, with lifetime technical support.
+                </div>
+            </div>
+
+            <!-- Core features -->
+            <h2 class="section-title">⚙️ Advanced CCTV Capabilities</h2>
+            <div class="features-grid" id="featuresGrid"></div>
+
+            <!-- Featured Projects Gallery (CCTV installation themed images) -->
+            <h2 class="section-title">🏢 Deployed Security Projects</h2>
+            <div class="projects-gallery" id="projectsGallery"></div>
+
+            <!-- Technology & Equipment -->
+            <div class="tech-showcase">
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem;"><i class="fas fa-microchip"></i> Technology We Integrate</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                    <span class="tech-badge"><i class="fas fa-eye"></i> AI Face Recognition</span>
+                    <span class="tech-badge"><i class="fas fa-cloud-upload-alt"></i> Cloud Storage (30-365 days)</span>
+                    <span class="tech-badge"><i class="fas fa-chart-line"></i> Heat Mapping & Analytics</span>
+                    <span class="tech-badge"><i class="fas fa-mobile-alt"></i> Mobile / Web Access</span>
+                    <span class="tech-badge"><i class="fas fa-sd-card"></i> H.265+ Compression</span>
+                    <span class="tech-badge"><i class="fas fa-infrared"></i> Starlight Night Vision</span>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="cta-banner">
+                <i class="fas fa-lock"></i>
+                <h3>Secure your property today</h3>
+                <p>Free site survey, customized camera placement, and remote monitoring setup.</p>
+                <button class="cta-button" id="cctvCtaBtn"><i class="fas fa-headset"></i> Request a Security Assessment</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p><i class="fas fa-shield-virus"></i> Certified CCTV Installers | 24/7 Technical Support | GDPR Compliant</p>
+        <p style="margin-top: 10px;">📞 +91 90285 88822 | ✉️ cctv@info@idealelectricals.com | © 2026 CCTV Installation Portfolio</p>
+    </footer>
+
+    <script>
+        // CCTV Feature Data
+        const cctvFeatures = [{
+            icon: "fas fa-camera-retro",
+            title: "4K Ultra HD Cameras",
+            desc: "Crystal-clear imaging with wide dynamic range (WDR) and low-light performance."
+        }, {
+            icon: "fas fa-brain",
+            title: "AI Motion Detection",
+            desc: "Person/vehicle detection reduces false alerts and improves accuracy."
+        }, {
+            icon: "fas fa-database",
+            title: "Cloud & Local Backup",
+            desc: "Redundant storage with remote access from any device."
+        }, {
+            icon: "fas fa-charging-station",
+            title: "PoE Installation",
+            desc: "Single-cable power + data for easy, clean deployment."
+        }, {
+            icon: "fas fa-chart-simple",
+            title: "Analytics Dashboard",
+            desc: "Heat maps, people counting & occupancy insights."
+        }, {
+            icon: "fas fa-eye",
+            title: "Remote Live Viewing",
+            desc: "iOS/Android app with real-time alerts and playback."
+        }];
+
+        // CCTV specific projects (images related to security/surveillance theme)
+        const cctvProjects = [{
+            name: "City Corporate Tower Security",
+            category: "Commercial High-Rise",
+            img: "https://tse1.explicit.bing.net/th/id/OIP.DxgU7IwX1C8fIw6n0GiNwAHaE8?rs=1&pid=ImgDetMain&o=7&rm=3",
+            desc: "Installed 68 high-speed PTZ cameras with centralized NVR and 24/7 remote monitoring."
+        }, {
+            name: "Riverside Mall Surveillance Upgrade",
+            category: "Retail",
+            img: "https://tse3.mm.bing.net/th/id/OIP.Am_zvtMeks6aNbVMgAyDLwHaD4?rs=1&pid=ImgDetMain&o=7&rm=3",
+            desc: "AI-based people counting and license plate recognition for parking zones."
+        }, {
+            name: "Industrial Warehouse CCTV Network",
+            category: "Industrial",
+            img: "https://tse1.mm.bing.net/th/id/OIP.pibzToE4awgQtfVE-CjAcgHaEo?rs=1&pid=ImgDetMain&o=7&rm=3",
+            desc: "Explosion-proof cameras + thermal perimeter detection system."
+        }, {
+            name: "Smart Home Security Package",
+            category: "Residential",
+            img: "https://th.bing.com/th/id/OIP.xELJ6VyVq1ewOHUQEspjVwHaEJ?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3",
+            desc: "8 outdoor 4K cameras, doorbell cam, and cloud subscription with mobile alerts."
+        }];
+
+        // Render function for features
+        function renderFeatures() {
+            const container = document.getElementById('featuresGrid');
+            if (!container) return;
+            container.innerHTML = '';
+            cctvFeatures.forEach(f => {
+                const card = document.createElement('div');
+                card.className = 'feature-card';
+                card.innerHTML = `
+        <div class="feature-icon"><i class="${f.icon}"></i></div>
+        <h3>${f.title}</h3>
+        <p style="color: #517a97;">${f.desc}</p>
+      `;
+                container.appendChild(card);
+            });
+        }
+
+        // Render project gallery
+        function renderProjects() {
+            const galleryContainer = document.getElementById('projectsGallery');
+            if (!galleryContainer) return;
+            galleryContainer.innerHTML = '';
+            cctvProjects.forEach(proj => {
+                const projectDiv = document.createElement('div');
+                projectDiv.className = 'project-card';
+                projectDiv.innerHTML = `
+        <div class="project-img" style="background-image: url('${proj.img}'); background-size: cover; background-position: center;"></div>
+        <div class="project-info">
+          <span class="project-tag"><i class="fas fa-video"></i> ${proj.category}</span>
+          <h4>${proj.name}</h4>
+          <p style="color: #4B6F8C;">${proj.desc}</p>
+        </div>
+      `;
+                galleryContainer.appendChild(projectDiv);
+            });
+        }
+
+        // Init and CTA interactivity
+        renderFeatures();
+        renderProjects();
+
+        const cta = document.getElementById('cctvCtaBtn');
+        if (cta) {
+            cta.addEventListener('click', () => {
+                alert("📹 CCTV Installation consultation:\n📞 +91 90285 88822\n✉️ cctv@info@idealelectricals.com\nFree on-site assessment and quote within 24 hours.");
+            });
+        }
+
+        const backBtn = document.getElementById('backToServicesLink');
+        if (backBtn) {
+            backBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert("↩️ Navigate back to main services overview. (Standalone CCTV Portfolio)");
+            });
+        }
+
+        console.log("CCTV Installation Portfolio — High-definition security solutions.");
+    </script>
+</body>
+
+</html>

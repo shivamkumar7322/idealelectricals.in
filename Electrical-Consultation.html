@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Electrical Consultation | Expert Advisory Portfolio</title>
+    <!-- Google Fonts + Font Awesome 6 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #F8F9FC;
+            color: #1C2E3A;
+            line-height: 1.5;
+        }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        /* header */
+        
+        .site-header {
+            background: #11212E;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: white;
+            font-weight: 800;
+            font-size: 1.6rem;
+            letter-spacing: -0.4px;
+        }
+        
+        .logo i {
+            font-size: 2rem;
+            color: #5D9BEC;
+        }
+        
+        .back-link {
+            background: rgba(255, 255, 255, 0.12);
+            padding: 8px 20px;
+            border-radius: 40px;
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+        }
+        
+        .back-link:hover {
+            background: #5D9BEC;
+            color: #11212E;
+        }
+        /* hero section with consultation-themed background */
+        
+        .consult-hero {
+            background: linear-gradient(125deg, #1C3A50 0%, #2C5A7A 100%);
+            color: white;
+            padding: 3rem 0 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .consult-hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://img.freepik.com/premium-photo/photo-electrical-technician-working_763111-35958.jpg');
+            /* blueprint/consultation style */
+            background-size: cover;
+            background-position: center 20%;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-badge {
+            background: #5D9BEC30;
+            backdrop-filter: blur(4px);
+            display: inline-block;
+            padding: 6px 18px;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid #5D9BEC;
+            margin-bottom: 1.2rem;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.1rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-content h1 i {
+            color: #5D9BEC;
+            margin-right: 12px;
+        }
+        
+        .hero-desc {
+            font-size: 1.2rem;
+            color: #E0EFFC;
+            max-width: 680px;
+            margin-bottom: 2rem;
+        }
+        
+        .stats-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        
+        .stat-item {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            font-size: 1.1rem;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #5D9BEC;
+        }
+        /* section titles */
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 2.5rem 0 1.2rem;
+            position: relative;
+            display: inline-block;
+            color: #1A4A6E;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 70px;
+            height: 4px;
+            background: #5D9BEC;
+            border-radius: 6px;
+        }
+        /* description card */
+        
+        .desc-card {
+            background: white;
+            border-radius: 32px;
+            padding: 2rem;
+            margin: 1.5rem 0;
+            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04);
+            border: 1px solid #E2EDF6;
+        }
+        
+        .desc-text {
+            font-size: 1.05rem;
+            color: #2E577A;
+            line-height: 1.7;
+        }
+        /* consultation service grid */
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.8rem;
+            margin: 2rem 0;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 28px;
+            padding: 1.6rem;
+            transition: all 0.25s;
+            border: 1px solid #EAF0F8;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: #5D9BEC;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .service-icon {
+            background: #E8F0FE;
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 32px;
+            margin-bottom: 1.2rem;
+        }
+        
+        .service-icon i {
+            font-size: 2rem;
+            color: #3A7BD5;
+        }
+        
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.6rem;
+        }
+        /* project gallery (consultation case studies) */
+        
+        .projects-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0 2.5rem;
+        }
+        
+        .project-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            transition: 0.2s;
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+        }
+        
+        .project-img {
+            height: 210px;
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .project-info {
+            padding: 1.5rem;
+        }
+        
+        .project-tag {
+            background: #EFF4FC;
+            padding: 4px 12px;
+            border-radius: 40px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: #3A7BD5;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+        
+        .project-info h4 {
+            font-size: 1.25rem;
+            margin-bottom: 0.4rem;
+        }
+        /* expertise badges */
+        
+        .expertise-showcase {
+            background: #ffffff;
+            border-radius: 32px;
+            padding: 1.8rem;
+            margin: 1.5rem 0;
+        }
+        
+        .expert-badge {
+            background: #EDF3FA;
+            padding: 8px 18px;
+            border-radius: 60px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin: 0.3rem;
+        }
+        /* cta banner */
+        
+        .cta-banner {
+            background: linear-gradient(105deg, #1B496B, #2C6E9E);
+            border-radius: 48px;
+            padding: 2.5rem;
+            margin: 2rem 0 2.5rem;
+            text-align: center;
+            color: white;
+        }
+        
+        .cta-banner i {
+            font-size: 2.5rem;
+            color: #5D9BEC;
+        }
+        
+        .cta-button {
+            background: #5D9BEC;
+            border: none;
+            padding: 12px 34px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            color: #11212E;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 1rem;
+        }
+        
+        .cta-button:hover {
+            background: white;
+            transform: scale(1.02);
+        }
+        
+        footer {
+            background: #0E1E2A;
+            color: #C4DCE8;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 700px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <i class="fas fa-chalkboard-user"></i>
+                <span>Electro<span style="color:#5D9BEC;">Consult</span></span>
+            </div>
+            <a href="#" class="back-link" id="backToServicesLink"><i class="fas fa-arrow-left"></i> Back to All Services</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section with consultation / meeting imagery -->
+        <section class="consult-hero">
+            <div class="container hero-content">
+                <div class="hero-badge"><i class="fas fa-clipboard-list"></i> Code Compliance | Energy Audits | Feasibility Studies</div>
+                <h1><i class="fas fa-chalkboard-user"></i> Electrical Consultation Portfolio</h1>
+                <p class="hero-desc">Strategic advisory, engineering reviews, load analysis, and regulatory compliance. We help architects, facility managers, and developers design safe, efficient, and future-proof electrical systems.</p>
+                <div class="stats-row">
+                    <div class="stat-item"><span class="stat-number">350+</span> <span>Projects Advised</span></div>
+                    <div class="stat-item"><span class="stat-number">100%</span> <span>Compliance Rate</span></div>
+                    <div class="stat-item"><span class="stat-number">22+</span> <span>Expert Engineers</span></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Description -->
+            <div class="desc-card">
+                <h2 class="section-title">📋 Technical & Strategic Electrical Advisory</h2>
+                <div class="desc-text">
+                    Our consultancy services bridge the gap between design and execution. We provide independent expert reviews, load calculations, energy optimization strategies, and due diligence for electrical infrastructure. Whether you're planning a new high-rise, upgrading
+                    a factory, or need code compliance verification — our certified electrical engineers deliver actionable insights, risk mitigation, and cost-saving roadmaps.
+                </div>
+            </div>
+
+            <!-- Consultation Service Areas -->
+            <h2 class="section-title">🔍 Consultation Focus Areas</h2>
+            <div class="services-grid" id="servicesGrid"></div>
+
+            <!-- Case Studies / Projects (consultation imagery) -->
+            <h2 class="section-title">📁 Featured Consultation Projects</h2>
+            <div class="projects-gallery" id="projectsGallery"></div>
+
+            <!-- Expertise / Qualifications -->
+            <div class="expertise-showcase">
+                <h3 style="font-size: 1.5rem; margin-bottom: 1rem;"><i class="fas fa-certificate"></i> Core Competencies</h3>
+                <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+                    <span class="expert-badge"><i class="fas fa-file-alt"></i> Load Forecasting & Sizing</span>
+                    <span class="expert-badge"><i class="fas fa-chart-pie"></i> Energy Audits (ASHRAE Level 1-3)</span>
+                    <span class="expert-badge"><i class="fas fa-code-branch"></i> Short Circuit / Arc Flash Studies</span>
+                    <span class="expert-badge"><i class="fas fa-drafting-compass"></i> Blueprint & Single-Line Review</span>
+                    <span class="expert-badge"><i class="fas fa-gavel"></i> NEC / IEC Code Compliance</span>
+                    <span class="expert-badge"><i class="fas fa-lightbulb"></i> Renewable Integration Strategy</span>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="cta-banner">
+                <i class="fas fa-handshake"></i>
+                <h3>Need Expert Electrical Advice?</h3>
+                <p>Schedule a one-on-one consultation or request a feasibility report. We offer remote & onsite advisory worldwide.</p>
+                <button class="cta-button" id="consultCtaBtn"><i class="fas fa-calendar-alt"></i> Book Free Initial Call</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p><i class="fas fa-microphone-alt"></i> Licensed Professional Engineers | Independent Advisory | Confidentiality Guaranteed</p>
+        <p style="margin-top: 10px;">📞 +1 (800) 555-CONSULT | ✉️ consult@electroconsult.com | © 2026 Electrical Consultation Portfolio</p>
+    </footer>
+
+    <script>
+        // Consultation service data
+        const consultServices = [{
+            icon: "fas fa-chart-simple",
+            title: "Energy Audits",
+            desc: "Detailed power consumption analysis with actionable savings roadmap."
+        }, {
+            icon: "fas fa-drafting-compass",
+            title: "Design Review",
+            desc: "Validation of electrical blueprints, single-line diagrams, and panel schedules."
+        }, {
+            icon: "fas fa-shield-alt",
+            title: "Safety & Compliance",
+            desc: "NEC, IEC, local code compliance audits and risk assessments."
+        }, {
+            icon: "fas fa-charging-station",
+            title: "Load Analysis",
+            desc: "Peak demand forecasting and transformer/feeder sizing."
+        }, {
+            icon: "fas fa-solar-panel",
+            title: "Renewable Advisory",
+            desc: "Solar + storage feasibility, ROI modeling & incentive navigation."
+        }, {
+            icon: "fas fa-bezier-curve",
+            title: "BIM Integration",
+            desc: "Electrical system modeling and clash detection for large projects."
+        }];
+
+        // Consultation projects (case studies with relevant imagery)
+        const consultProjects = [{
+            name: "Downtown High-Rise Review",
+            category: "Commercial Building",
+            img: "https://th.bing.com/th/id/OIP.IVSgcZu6croEvYkLIc3RnwHaEK?w=282&h=180&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
+            desc: "Complete electrical infrastructure audit, load analysis & emergency system redesign. Saved 18% in material costs."
+        }, {
+            name: "Manufacturing Plant Compliance",
+            category: "Industrial",
+            img: "https://th.bing.com/th/id/OIP.9mA6WvYekNS-lE1qTsk_MQHaE8?w=302&h=201&c=7&r=0&o=7&dpr=1.3&pid=1.7&rm=3",
+            desc: "Arc flash study, protective device coordination, and safety compliance certification."
+        }, {
+            name: "Hospital Backup Power Strategy",
+            category: "Healthcare",
+            img: "https://www.comeet.com/resources/wp-content/uploads/2019/11/Electrician.jpg",
+            desc: "Generator sizing, UPS integration, and NFPA 110 compliance roadmap."
+        }, {
+            name: "School District Energy Optimization",
+            category: "Public Sector",
+            img: "https://tse4.mm.bing.net/th/id/OIP.bK11Y8magw2Y37CCtZuorQHaE7?rs=1&pid=ImgDetMain&o=7&rm=3",
+            desc: "LED retrofit analysis, solar PV feasibility and utility rebate procurement."
+        }];
+
+        // Render service grid
+        function renderConsultServices() {
+            const container = document.getElementById('servicesGrid');
+            if (!container) return;
+            container.innerHTML = '';
+            consultServices.forEach(s => {
+                const card = document.createElement('div');
+                card.className = 'service-card';
+                card.innerHTML = `
+        <div class="service-icon"><i class="${s.icon}"></i></div>
+        <h3>${s.title}</h3>
+        <p style="color: #4A6F8F;">${s.desc}</p>
+      `;
+                container.appendChild(card);
+            });
+        }
+
+        // Render project gallery
+        function renderConsultProjects() {
+            const galleryContainer = document.getElementById('projectsGallery');
+            if (!galleryContainer) return;
+            galleryContainer.innerHTML = '';
+            consultProjects.forEach(proj => {
+                const projectDiv = document.createElement('div');
+                projectDiv.className = 'project-card';
+                projectDiv.innerHTML = `
+        <div class="project-img" style="background-image: url('${proj.img}'); background-size: cover; background-position: center;"></div>
+        <div class="project-info">
+          <span class="project-tag"><i class="fas fa-briefcase"></i> ${proj.category}</span>
+          <h4>${proj.name}</h4>
+          <p style="color: #4A6F8F;">${proj.desc}</p>
+        </div>
+      `;
+                galleryContainer.appendChild(projectDiv);
+            });
+        }
+
+        // Initialize page
+        renderConsultServices();
+        renderConsultProjects();
+
+        // CTA button interaction
+        const ctaBtn = document.getElementById('consultCtaBtn');
+        if (ctaBtn) {
+            ctaBtn.addEventListener('click', () => {
+                alert("📋 Electrical Consultation request:\n📞 +91 90285 88822\n✉️ consult@idealelectrical.com\nWe'll contact you within 24 hours for a free introductory call.");
+            });
+        }
+
+        // Back to services link (informational)
+        const backLink = document.getElementById('backToServicesLink');
+        if (backLink) {
+            backLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert("↩️ Return to main services overview. (Electrical Consultation standalone portfolio)");
+            });
+        }
+
+        console.log("Electrical Consultation Portfolio — Expert advisory ready.");
+    </script>
+</body>
+
+</html>

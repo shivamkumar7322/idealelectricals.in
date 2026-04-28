@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>ElectroVerse | Premium Electrical Services Portfolio</title>
+    <!-- Google Fonts & Font Awesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #fbfcff;
+            color: #1a2c3e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+        /* container utility */
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        /* header */
+        
+        .site-header {
+            background: #ffffff;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.02), 0 2px 6px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(2px);
+            background: rgba(255, 255, 255, 0.96);
+        }
+        
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            padding: 1rem 0;
+            gap: 16px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 1.7rem;
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #1F3A5F, #2E5A8B);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .logo i {
+            background: none;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+            color: #2E5A8B;
+            font-size: 1.8rem;
+        }
+        
+        .home-btn {
+            background: #eef2f9;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: #1f3a5f;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .home-btn:hover {
+            background: #1f3a5f;
+            color: white;
+            transform: translateY(-2px);
+        }
+        /* Hero section */
+        
+        .hero {
+            background: linear-gradient(120deg, #eef5ff 0%, #ffffff 100%);
+            padding: 3rem 0 2.5rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, #1F3A5F, #2A73B1);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: #2c4c6e;
+            max-width: 680px;
+        }
+        
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 2rem 0 1.5rem 0;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: #2A73B1;
+            border-radius: 4px;
+        }
+        /* service grid */
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0 3rem;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 28px;
+            overflow: hidden;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s cubic-bezier(0.2, 0, 0, 1);
+            border: 1px solid rgba(0, 0, 0, 0.03);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-img {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .card-content {
+            padding: 1.8rem;
+        }
+        
+        .card-content h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+        }
+        
+        .card-content p {
+            color: #4a627a;
+            margin-bottom: 1.5rem;
+        }
+        
+        .portfolio-link {
+            background: none;
+            border: none;
+            font-weight: 700;
+            color: #2A73B1;
+            font-size: 0.95rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: gap 0.2s;
+            padding: 8px 0;
+        }
+        
+        .portfolio-link i {
+            font-size: 0.8rem;
+            transition: transform 0.2s;
+        }
+        
+        .portfolio-link:hover {
+            gap: 12px;
+            color: #17466b;
+        }
+        
+        .portfolio-link:hover i {
+            transform: translateX(3px);
+        }
+        /* portfolio detail view */
+        
+        .portfolio-detail {
+            background: #ffffff;
+            border-radius: 32px;
+            margin: 2rem 0 3rem;
+            animation: fadeUp 0.4s ease-out;
+        }
+        
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .detail-banner {
+            width: 100%;
+            height: 320px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 32px;
+            margin-bottom: 2rem;
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .detail-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: #1F3A5F;
+        }
+        
+        .detail-desc {
+            font-size: 1.1rem;
+            color: #2c5368;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .feature-item {
+            background: #f0f6fe;
+            padding: 1rem 1.5rem;
+            border-radius: 40px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+        }
+        
+        .feature-item i {
+            font-size: 1.4rem;
+            color: #2A73B1;
+        }
+        
+        .projects-list {
+            background: #f9fafc;
+            padding: 1.8rem;
+            border-radius: 28px;
+            margin: 2rem 0;
+        }
+        
+        .projects-list h4 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .projects-list ul {
+            list-style: none;
+        }
+        
+        .projects-list li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .projects-list li i {
+            color: #2A73B1;
+            width: 24px;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 24px;
+            transition: transform 0.25s, box-shadow 0.2s;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+        }
+        
+        .gallery img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.12);
+        }
+        
+        .cta-contact {
+            background: linear-gradient(110deg, #EFF6FF, #ffffff);
+            padding: 1.8rem;
+            border-radius: 40px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .cta-contact i {
+            font-size: 2rem;
+            color: #1F3A5F;
+        }
+        
+        .back-btn {
+            background: #eef2f9;
+            border: none;
+            padding: 12px 26px;
+            border-radius: 40px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin: 1rem 0 2rem;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.2s;
+        }
+        
+        .back-btn:hover {
+            background: #1f3a5f;
+            color: white;
+        }
+        
+        footer {
+            background: #0b1c2c;
+            color: #cbdde9;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-radius: 32px 32px 0 0;
+        }
+        /* hidden utility */
+        
+        .hidden {
+            display: none;
+        }
+        
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .detail-title {
+                font-size: 1.8rem;
+            }
+            .detail-banner {
+                height: 220px;
+            }
+            .services-grid {
+                gap: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="logo">
+                <i class="fas fa-bolt"></i>
+                <span>ElectroVerse</span>
+            </div>
+            <button id="globalHomeBtn" class="home-btn"><i class="fas fa-arrow-left"></i> All Services</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="hero">
+            <div class="container">
+                <h1>⚡ WHAT WE DO<br>Premium Electrical Services</h1>
+                <p>Industry-leading electrical solutions — residential, industrial, renewable & security. Explore each service’s dedicated portfolio with real projects, features, and imaging.</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <!-- Services Grid Section -->
+            <div id="servicesGridSection">
+                <div class="section-title">Our Electrical Services</div>
+                <div class="services-grid" id="servicesGrid"></div>
+            </div>
+
+            <!-- Portfolio Detail Section (dynamic) -->
+            <div id="portfolioDetailSection" class="hidden"></div>
+        </div>
+    </main>
+
+    <footer>
+        <p><i class="fas fa-shield-alt"></i> Reliable • Certified • 24/7 Support</p>
+        <p style="margin-top: 12px; font-size: 0.85rem;">© 2026 rony singh ElectroVerse — Professional Electrical Portfolio. Every service crafted with precision.</p>
+    </footer>
+
+    <script>
+        // ---------- SERVICE DATA (each with dedicated portfolio images, features, projects) ----------
+        const servicesData = [{
+            id: "house-wiring",
+            title: "House Wiring",
+            shortDesc: "Complete wiring solutions for homes with safety and reliability.",
+            longDesc: "We deliver future-ready residential electrical systems: from breaker panels to smart lighting. Our certified electricians ensure code compliance, surge protection, and energy-efficient layouts. Perfect for new builds, renovations, or upgrade projects.",
+            coverImg: "https://picsum.photos/id/106/1200/500", // modern house electric
+            features: ["Certified Master Electricians", "Fire-resistant & high-grade wires", "Earthing & Surge Protection", "Smart home pre-wiring"],
+            projects: ["Maple Residency – 32 unit smart wiring", "Hillcrest Bungalow complete rewiring", "EcoVillage home automation setup"],
+            galleryImages: [
+                "https://picsum.photos/id/20/600/400",
+                "https://picsum.photos/id/26/600/400",
+                "https://picsum.photos/id/124/600/400"
+            ]
+        }, {
+            id: "industrial-work",
+            title: "Industrial Work",
+            shortDesc: "We handle all types of industrial electrical projects.",
+            longDesc: "High-voltage installations, motor control centers, industrial automation, and plant maintenance. Our crew delivers robust solutions for factories, warehouses, and manufacturing units with minimal downtime.",
+            coverImg: "https://picsum.photos/id/29/1200/500",
+            features: ["3-phase panel design", "VFD & motor installation", "Load balancing & power audits", "Explosion-proof wiring"],
+            projects: ["Steel Plant – MCC upgrade", "Textile factory full electrification", "Food processing unit automation"],
+            galleryImages: [
+                "https://picsum.photos/id/30/600/400",
+                "https://picsum.photos/id/32/600/400",
+                "https://picsum.photos/id/101/600/400"
+            ]
+        }, {
+            id: "repair-maintenance",
+            title: "Repair & Maintenance",
+            shortDesc: "Timely repair and maintenance services for all systems.",
+            longDesc: "Preventive & corrective maintenance for residential & commercial electrical systems. From faulty wiring to panel upgrades, we respond rapidly with diagnostic tools and long-term reliability.",
+            coverImg: "https://picsum.photos/id/34/1200/500",
+            features: ["24/7 emergency response", "Thermal imaging inspections", "Panel & breaker replacement", "Routine maintenance contracts"],
+            projects: ["Metro Mall electrical restoration", "School campus annual maintenance", "Housing society power audit"],
+            galleryImages: [
+                "https://picsum.photos/id/121/600/400",
+                "https://picsum.photos/id/58/600/400",
+                "https://picsum.photos/id/77/600/400"
+            ]
+        }, {
+            id: "cctv-installation",
+            title: "CCTV Installation",
+            shortDesc: "Professional CCTV installation for your security.",
+            longDesc: "HD IP cameras, NVR/DVR systems, remote monitoring, and AI-based motion detection. Secure your property with customized surveillance for home, office, or industrial sites.",
+            coverImg: "https://picsum.photos/id/0/1200/500",
+            features: ["4K / Full HD Cameras", "Night vision & motion alerts", "Cloud & local storage", "Mobile & web access"],
+            projects: ["City Bank surveillance system", "Warehouse 24/7 security setup", "Gated community camera network"],
+            galleryImages: [
+                "https://picsum.photos/id/42/600/400",
+                "https://picsum.photos/id/66/600/400",
+                "https://picsum.photos/id/15/600/400"
+            ]
+        }, {
+            id: "solar-panel-setup",
+            title: "Solar Panel Setup",
+            shortDesc: "Save energy with our efficient solar panel solutions.",
+            longDesc: "Grid-tied & off-grid solar systems. We design, install, and maintain high-yield photovoltaic arrays with net metering integration to reduce your carbon footprint and energy bills.",
+            coverImg: "https://picsum.photos/id/116/1200/500",
+            features: ["Monocrystalline panels", "Hybrid inverters", "Battery backup solutions", "Government subsidy assistance"],
+            projects: ["GreenTech factory 150kW solar plant", "Residential rooftop 8kW system", "Agricultural solar water pump setup"],
+            galleryImages: [
+                "https://picsum.photos/id/68/600/400",
+                "https://picsum.photos/id/89/600/400",
+                "https://picsum.photos/id/170/600/400"
+            ]
+        }, {
+            id: "electrical-consultation",
+            title: "Electrical Consultation",
+            shortDesc: "Get expert advice for your electrical requirements.",
+            longDesc: "Strategic consultation for residential projects, commercial complexes, and industrial expansions. We provide load calculations, energy efficiency audits, and blueprint reviews.",
+            coverImg: "https://picsum.photos/id/91/1200/500",
+            features: ["Energy optimization plans", "Safety & code compliance", "Load analysis & projections", "Project management support"],
+            projects: ["Smart City infrastructure consulting", "Hospital backup system design", "High-rise electrical blueprint review"],
+            galleryImages: [
+                "https://picsum.photos/id/152/600/400",
+                "https://picsum.photos/id/169/600/400",
+                "https://picsum.photos/id/155/600/400"
+            ]
+        }];
+
+        // DOM elements
+        const servicesGridEl = document.getElementById('servicesGrid');
+        const servicesGridSection = document.getElementById('servicesGridSection');
+        const portfolioDetailSection = document.getElementById('portfolioDetailSection');
+        const globalHomeBtn = document.getElementById('globalHomeBtn');
+
+        // Helper: render service cards on main grid
+        function renderServicesGrid() {
+            if (!servicesGridEl) return;
+            servicesGridEl.innerHTML = '';
+            servicesData.forEach(service => {
+                const card = document.createElement('div');
+                card.className = 'service-card';
+                // background image for card: use first gallery or cover img as thumbnail
+                const thumbImg = service.galleryImages[0] || service.coverImg;
+                card.innerHTML = `
+        <div class="card-img" style="background-image: url('${thumbImg}'); background-size: cover;"></div>
+        <div class="card-content">
+          <h3>${service.title}</h3>
+          <p>${service.shortDesc}</p>
+          <button class="portfolio-link" data-id="${service.id}">
+            View Portfolio <i class="fas fa-arrow-right"></i>
+          </button>
+        </div>`;
+                servicesGridEl.appendChild(card);
+            });
+            // attach event listeners to each newly created button
+            document.querySelectorAll('.portfolio-link').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    const serviceId = btn.getAttribute('data-id');
+                    if (serviceId) {
+                        showPortfolioDetail(serviceId);
+                        // push state to URL
+                        window.history.pushState({
+                            view: 'portfolio',
+                            id: serviceId
+                        }, '', `#portfolio/${serviceId}`);
+                    }
+                });
+            });
+        }
+
+        // Build portfolio HTML from service data
+        function generatePortfolioHTML(service) {
+            const galleryHtml = service.galleryImages.map(imgUrl => `<img src="${imgUrl}" alt="${service.title} gallery" loading="lazy">`).join('');
+            const featuresHtml = service.features.map(feat => `<div class="feature-item"><i class="fas fa-check-circle"></i> ${feat}</div>`).join('');
+            const projectsHtml = service.projects.map(proj => `<li><i class="fas fa-bolt"></i> ${proj}</li>`).join('');
+
+            return `
+                        <div class="portfolio-detail">
+                            <button class="back-btn" id="backToServicesBtn"><i class="fas fa-chevron-left"></i> Back to all services</button>
+                            <div class="detail-banner" style="background-image: url('${service.coverImg}');"></div>
+                            <h1 class="detail-title">${service.title}</h1>
+                            <div class="detail-desc">${service.longDesc}</div>
+
+                            <div class="features-grid">
+                                ${featuresHtml}
+                            </div>
+
+                            <div class="projects-list">
+                                <h4><i class="fas fa-folder-open"></i> Featured projects</h4>
+                                <ul>${projectsHtml}</ul>
+                            </div>
+
+                            <h3 style="margin-top: 1rem;"><i class="fas fa-images"></i> Project gallery</h3>
+                            <div class="gallery">
+                                ${galleryHtml}
+                            </div>
+
+                            <div class="cta-contact">
+                                <i class="fas fa-headset"></i> <strong style="font-size:1.2rem;">Need this service?</strong><br>📞Call our experts: +1(800) 342 - ELECTRO&nbsp;|&nbsp;✉️hello@electroverse.com
+                            </div>
+                            <button class="back-btn" id="backToServicesBtn2"><i class="fas fa-chevron-left"></i> Return to Service Portfolio list</button>
+                        </div>
+                        `;
+        }
+
+        // Show portfolio detail view based on service id
+        function showPortfolioDetail(serviceId) {
+            const service = servicesData.find(s => s.id === serviceId);
+            if (!service) {
+                // fallback: show grid
+                showServicesGrid();
+                return;
+            }
+            const detailHtml = generatePortfolioHTML(service);
+            portfolioDetailSection.innerHTML = detailHtml;
+            // hide grid section, show detail section
+            servicesGridSection.classList.add('hidden');
+            portfolioDetailSection.classList.remove('hidden');
+
+            // attach back buttons events after DOM update
+            const backBtn1 = document.getElementById('backToServicesBtn');
+            const backBtn2 = document.getElementById('backToServicesBtn2');
+            const handleBack = () => {
+                showServicesGrid();
+                window.history.pushState({
+                    view: 'grid'
+                }, '', window.location.pathname);
+            };
+            if (backBtn1) backBtn1.addEventListener('click', handleBack);
+            if (backBtn2) backBtn2.addEventListener('click', handleBack);
+
+            // optional gallery lightbox effect (simple: click to view bigger, not necessary but nice)
+            const galleryImgs = portfolioDetailSection.querySelectorAll('.gallery img');
+            galleryImgs.forEach(img => {
+                img.style.cursor = 'pointer';
+                img.addEventListener('click', () => {
+                    window.open(img.src, '_blank');
+                });
+            });
+        }
+
+        // Show main services grid, hide portfolio
+        function showServicesGrid() {
+            servicesGridSection.classList.remove('hidden');
+            portfolioDetailSection.classList.add('hidden');
+            // clear hash without triggering popstate loop?
+            if (window.location.hash) {
+                window.history.pushState({
+                    view: 'grid'
+                }, '', window.location.pathname);
+            }
+        }
+
+        // Handle initial load based on URL hash
+        function handleInitialHash() {
+            const hash = window.location.hash.slice(1); // remove '#'
+            if (hash.startsWith('portfolio/')) {
+                const id = hash.split('/')[1];
+                const exists = servicesData.some(s => s.id === id);
+                if (exists) {
+                    showPortfolioDetail(id);
+                    return;
+                }
+            }
+            // default: show grid
+            showServicesGrid();
+        }
+
+        // Listen to popstate (back/forward)
+        window.addEventListener('popstate', (event) => {
+            if (event.state && event.state.view === 'portfolio' && event.state.id) {
+                showPortfolioDetail(event.state.id);
+            } else {
+                showServicesGrid();
+            }
+            // fallback for hash changes not captured by state
+            if (!event.state) {
+                const hash = window.location.hash.slice(1);
+                if (hash.startsWith('portfolio/')) {
+                    const idFromHash = hash.split('/')[1];
+                    if (servicesData.some(s => s.id === idFromHash)) {
+                        showPortfolioDetail(idFromHash);
+                    } else {
+                        showServicesGrid();
+                    }
+                } else {
+                    showServicesGrid();
+                }
+            }
+        });
+
+        // Global home button event
+        globalHomeBtn.addEventListener('click', () => {
+            showServicesGrid();
+            window.history.pushState({
+                view: 'grid'
+            }, '', window.location.pathname);
+        });
+
+        // initial rendering
+        renderServicesGrid();
+        handleInitialHash();
+
+        // extra safety: if back button from portfolio and hash manually typed, handle sync
+        window.addEventListener('hashchange', () => {
+            const hash = window.location.hash.slice(1);
+            if (hash.startsWith('portfolio/')) {
+                const id = hash.split('/')[1];
+                const service = servicesData.find(s => s.id === id);
+                if (service && servicesGridSection.classList.contains('hidden') === false) {
+                    showPortfolioDetail(id);
+                } else if (service && portfolioDetailSection.classList.contains('hidden') === false) {
+                    // already in portfolio, maybe different? update content
+                    showPortfolioDetail(id);
+                }
+            } else if (!hash) {
+                showServicesGrid();
+            }
+        });
+    </script>
+</body>
+
+</html>

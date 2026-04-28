@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Professional Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<style>
+    /* General Setup */
+    
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+        scroll-behavior: smooth;
+    }
+    
+     :root {
+        --primary-color: #0b1522;
+        --accent-gold: #ffcc00;
+        --text-white: #ffffff;
+    }
+    
+    body {
+        background-color: #f4f4f4;
+        color: #333;
+    }
+    /* Navbar */
+    
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 10%;
+        background: var(--primary-color);
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
+    
+    .logo {
+        color: var(--accent-gold);
+        font-size: 24px;
+        font-weight: 800;
+    }
+    
+    .nav-links {
+        display: flex;
+        list-style: none;
+    }
+    
+    .nav-links li a {
+        color: white;
+        text-decoration: none;
+        margin-left: 30px;
+        font-weight: 500;
+        transition: 0.3s;
+    }
+    
+    .nav-links li a:hover {
+        color: var(--accent-gold);
+    }
+    
+    .call-now {
+        background: var(--accent-gold);
+        padding: 0.5rem 1.2rem;
+        border-radius: 40px;
+        color: #0a2e4d !important;
+        font-weight: 700;
+        display: flex;
+        position: absolute;
+        right: 10%;
+        top: 20px;
+        gap: 8px;
+        text-decoration: none;
+    }
+    
+    .call-now i {
+        font-size: 1rem;
+    }
+    
+    .call-now:hover {
+        background: #e69500;
+        color: white !important;
+    }
+    /* Hero Section */
+    
+    .hero {
+        height: 100vh;
+        background: linear-gradient(rgba(11, 21, 34, 0.8), rgba(11, 21, 34, 0.8)), url('https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&w=1600&q=80');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+    }
+    
+    .hero-text h1 {
+        font-size: 4rem;
+        margin: 10px 0;
+    }
+    
+    .btn {
+        display: inline-block;
+        padding: 12px 35px;
+        background: var(--accent-gold);
+        color: #000;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: 700;
+        margin-top: 20px;
+        transition: 0.3s;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .btn:hover {
+        transform: scale(1.05);
+    }
+    /* Sections */
+    
+    section {
+        padding: 80px 10%;
+    }
+    
+    .section-title {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 40px;
+        position: relative;
+    }
+    
+    .section-title::after {
+        content: '';
+        width: 60px;
+        height: 3px;
+        background: var(--accent-gold);
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    /* Project Cards */
+    
+    .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
+    
+    .project-card {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+    }
+    
+    .project-card:hover {
+        transform: translateY(-5px);
+    }
+    /* Contact Form */
+    
+    #contact-form {
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    #contact-form input,
+    #contact-form textarea {
+        padding: 15px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: var(--primary-color);
+        color: white;
+    }
+    /* Responsive */
+    
+    @media (max-width: 768px) {
+        .nav-links {
+            display: none;
+        }
+        .hero-text h1 {
+            font-size: 2.5rem;
+        }
+    }
+</style>
+
+<body>
+
+    <nav class="navbar">
+        <div class="logo">RONY SINGH801</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <a href="tel:+919028588822" class="call-now"><i class="fas fa-phone-alt"></i> +91 90285 88822</a>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-text">
+            <h5>Hello, I am</h5>
+            <h1>SHIVAM SINGH</h1>
+            <p>Professional Web Developer & Designer</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <a href="#contact" class="btn">Hire Me</a>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-container">
+            <div class="about-content">
+                <p>Main ek passionate developer hoon jo clean aur functional websites banane mein maharat rakhta hoon. Mera goal user-friendly digital experiences create karna hai.</p>
+                <div class="skills">
+                    <span class="skill">HTML</span>
+                    <span class="skill">CSS</span>
+                    <span class="skill">JavaScript</span>
+                    <span class="skill">React</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2 class="section-title">My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Project One</h3>
+                <p>Ek responsive website ka design aur development.</p>
+                <a href="index.html">View Details</a>
+            </div>
+            <div class="project-card">
+                <h3>Project Two</h3>
+                <p>Modern UI/UX ke sath web application.</p>
+                <a href="project.html">View Details</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2 class="section-title">Contact Me</h2>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 RONY SINGH801 | Designed with ❤️</p>
+    </footer>
+
+    <script src="#">
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contact-form');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const name = document.getElementById('name').value;
+
+                // Custom Alert
+                alert(`✅ Thank you ${name}! Your message has been sent successfully.`);
+
+                form.reset();
+            });
+
+            // Smooth scroll check
+            console.log("Portfolio Loaded Successfully");
+        });
+    </script>
+</body>
+
+</html>

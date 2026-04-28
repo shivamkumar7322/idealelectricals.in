@@ -878,7 +878,6 @@ body {
 
 .view-all-btn {
     background-color: #0b1c2c;
-    
     color: white;
     padding: 12px 30px;
     border: none;
@@ -889,10 +888,12 @@ body {
     align-items: center;
     gap: 10px;
     transition: background 0.3s ease;
+    text-decoration-line: none;
 }
 
 .view-all-btn:hover {
-    background-color: #1a2e44;
+    background-color: #e6b800;
+    transform: translateY(-2px);
 }
 
 

@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title> RONY 801 Electricals | Safe & Reliable Power Solutions</title>
+    <!-- Google Fonts + Font Awesome 6 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #ffffff;
+            color: #1e293b;
+            scroll-behavior: smooth;
+            line-height: 1.5;
+        }
+        
+         :root {
+            --primary-dark: #0a2e4d;
+            --primary-blue: #1e4a76;
+            --accent-gold: #f5a623;
+            --accent-orange: #f39c12;
+            --gray-light: #f8fafc;
+            --gray-border: #e2e8f0;
+            --shadow-sm: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.02);
+            --shadow-md: 0 20px 25px -12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        /* header / navbar */
+        
+        .navbar {
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            padding: 1rem 0;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        
+        .logo h1 {
+            font-size: 1.7rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #0a2e4d 0%, #1e4a76 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+        
+        .logo span {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--accent-gold);
+            display: block;
+            line-height: 1.2;
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 500;
+            color: #1e293b;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent-gold);
+        }
+        
+        .call-now {
+            background: var(--accent-gold);
+            padding: 0.5rem 1.2rem;
+            border-radius: 40px;
+            color: #0a2e4d !important;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .call-now i {
+            font-size: 1rem;
+        }
+        
+        .call-now:hover {
+            background: #e69500;
+            color: white !important;
+        }
+        
+        .menu-icon {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--primary-dark);
+        }
+        /* buttons */
+        
+        .btn-gold {
+            background: var(--accent-gold);
+            color: #0a2e4d;
+            font-weight: 700;
+            padding: 12px 28px;
+            border-radius: 40px;
+            display: inline-block;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn-gold:hover {
+            background: #e69500;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(245, 166, 35, 0.3);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary-dark);
+            color: var(--primary-dark);
+            padding: 10px 26px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .btn-outline:hover {
+            background: var(--primary-dark);
+            color: white;
+        }
+        /* hero */
+        
+        .hero {
+            padding: 4rem 0 3rem;
+            height: 100vh;
+            background: url(https://cdn.wallpapersafari.com/73/8/oXPScIm.jpg);
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 60px;
+            color: white;
+        }
+        
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        .hero-content {
+            flex: 1.2;
+        }
+        
+        .hero-badge {
+            color: var(--accent-gold);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.2rem;
+            line-height: 1.2;
+            font-weight: 800;
+            margin: 1rem 0 1.2rem;
+            color: white;
+        }
+        
+        .highlight {
+            color: var(--accent-gold);
+        }
+        
+        .hero-content p {
+            font-size: 1.1rem;
+            color: #334155;
+            margin-bottom: 2rem;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .stats-row {
+            flex: 0.8;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            background: white;
+            padding: 1.8rem;
+            border-radius: 32px;
+            box-shadow: var(--shadow-md);
+            justify-content: space-around;
+        }
+        
+        .stat-item {
+            text-align: center;
+            min-width: 100px;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary-dark);
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #475569;
+        }
+        /* section headers */
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #0a2e4d;
+        }
+        
+        .section-header p {
+            color: #5b6e8c;
+            font-size: 1rem;
+            margin-top: 0.5rem;
+        }
+        /* services grid */
+        
+        .services-grid,
+        .projects-grid,
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .service-card,
+        .project-card,
+        .testimonial-card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 2rem 1.5rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            border: 1px solid var(--gray-border);
+        }
+        
+        .service-card:hover,
+        .project-card:hover,
+        .testimonial-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.12);
+        }
+        
+        .service-icon {
+            font-size: 2.8rem;
+            color: var(--accent-gold);
+            margin-bottom: 1rem;
+        }
+        
+        .service-card h3,
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .service-card p {
+            color: #475569;
+        }
+        /* about section with real image */
+        
+        .about-section {
+            background: var(--gray-light);
+            padding: 5rem 0;
+        }
+        
+        .about-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .about-content {
+            flex: 1;
+        }
+        
+        .about-content h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .about-features {
+            margin: 1.5rem 0;
+            list-style: none;
+        }
+        
+        .about-features li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .about-features i {
+            color: var(--accent-gold);
+            font-size: 1.2rem;
+        }
+        
+        .about-img {
+            flex: 0.9;
+            border-radius: 2rem;
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        
+        .about-img:hover img {
+            transform: scale(1.02);
+        }
+        /* projects with actual images */
+        
+        .project-card {
+            padding: 0 0 1.5rem 0;
+            overflow: hidden;
+            background: white;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .project-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-top-left-radius: 1.5rem;
+            border-top-right-radius: 1.5rem;
+            transition: transform 0.5s;
+        }
+        
+        .project-card:hover .project-img {
+            transform: scale(1.03);
+        }
+        
+        .project-card h3 {
+            margin-top: 1rem;
+            padding: 0 1rem;
+        }
+        
+        .project-card p {
+            padding: 0 1rem 0.5rem;
+            color: #475569;
+        }
+        
+        .testimonial-card {
+            text-align: left;
+        }
+        
+        .testimonial-card i.fa-quote-left {
+            color: var(--accent-gold);
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            opacity: 0.6;
+        }
+        
+        .client-name {
+            font-weight: 800;
+            margin-top: 1rem;
+        }
+        
+        .client-title {
+            font-size: 0.8rem;
+            color: #5b6e8c;
+        }
+        /* contact form */
+        
+        .contact-section {
+            padding: 5rem 0;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 3rem;
+        }
+        
+        .contact-info h3,
+        .contact-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-detail {
+            margin: 1.5rem 0;
+        }
+        
+        .contact-detail p {
+            margin: 0.8rem 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .contact-detail i {
+            width: 32px;
+            color: var(--accent-gold);
+        }
+        
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        
+        input,
+        textarea {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid var(--gray-border);
+            border-radius: 28px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: 0.2s;
+        }
+        
+        textarea {
+            border-radius: 20px;
+            resize: vertical;
+        }
+        
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            box-shadow: 0 0 0 3px rgba(245, 166, 35, 0.2);
+        }
+        /* footer */
+        
+        .footer {
+            background: #0a2e4d;
+            color: #cbd5e1;
+            padding: 2.5rem 0;
+            text-align: center;
+        }
+        
+        .footer a {
+            color: #f5a623;
+            text-decoration: none;
+        }
+        
+        .footer .credit {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+        }
+        /* responsive */
+        
+        @media (max-width: 880px) {
+            .menu-icon {
+                display: block;
+            }
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                background: white;
+                width: 80%;
+                height: calc(100vh - 70px);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
+                transition: 0.3s;
+                gap: 1.8rem;
+                align-items: flex-start;
+                z-index: 99;
+            }
+            .nav-links.active {
+                left: 0;
+            }
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .stats-row {
+                margin-top: 1rem;
+            }
+            .hero-grid {
+                flex-direction: column;
+            }
+            .about-grid {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .container {
+                padding: 0 20px;
+            }
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            .btn-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .btn-group a {
+                text-align: center;
+            }
+        }
+        
+        .view-all {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+        
+        .view-all a {
+            font-weight: 600;
+            color: var(--primary-dark);
+            text-decoration: none;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <h1>⚡ RONY ELECTRICALS 801</h1>
+                <span>Powering Trust Since 2012</span>
+            </div>
+            <div class="menu-icon" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="#home">Home</a>
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#projects">Projects</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#contact">Contact</a>
+                <a href="tel:+917322846171" class="call-now"><i class="fas fa-phone-alt"></i> +91 73228 46171</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-content">
+                <div class="hero-badge"><i class="fas fa-bolt"></i> 25+ YEARS LEGACY</div>
+                <h1>POWERING TRUST SINCE <br> WITH <span class="highlight">SAFE & RELIABLE</span> ELECTRICAL SOLUTIONS</h1>
+                <p>We provide complete electrical solutions for homes, offices, industries & commercial projects with quality and safety.</p>
+                <div class="btn-group">
+                    <a href="#contact" class="btn-gold"><i class="fas fa-file-invoice"></i> Get a Quote</a>
+                    <a href="#services" class="btn-outline">Our Services →</a>
+                </div>
+            </div>
+            <div class="stats-row">
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label"><i class="fas fa-shield-alt"></i> Safe Work</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10+</div>
+                    <div class="stat-label"><i class="fas fa-calendar-alt"></i> Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label"><i class="fas fa-user-hard-hat"></i> Expert Electricians</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+
+    <section id="services" class="container" style="padding: 5rem 0;">
+        <div class="section-header">
+            <h2>WHAT WE DO</h2>
+            <p>Comprehensive electrical services tailored for every need</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-home"></i></div>
+                <h3>House Wiring</h3>
+                <p>Complete wiring solutions, modular switches & safety audits for homes.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-chalkboard-user"></i></div>
+                <h3>Electrical Consultation</h3>
+                <p>Load calculation, energy audits and professional blueprints.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-tools"></i></div>
+                <h3>Repair & Maintenance</h3>
+                <p>24/7 support for short circuits, panel upgrades & routine checks.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-solar-panel"></i></div>
+                <h3>Solar Panel Setup</h3>
+                <p>Eco-friendly solar solutions with grid integration & savings.</p>
+            </div>
+        </div>
+        <div class="view-all"><a href="#projects"><i class="fas fa-arrow-right"></i> View All Projects</a></div>
+    </section>
+
+    <!-- About Section with REAL IMAGE -->
+    <section id="about" class="about-section">
+        <div class="container about-grid">
+            <div class="about-content">
+                <span style="color: var(--accent-gold); font-weight: 600;">✦ ABOUT COMPANY</span>
+                <h2>We Are Professional Electrical Contractor</h2>
+                <p> RONY Electricals is a trusted name in electrical contracting services. We deliver safe, reliable and high quality solutions for residential, commercial and industrial projects.</p>
+                <ul class="about-features">
+                    <li><i class="fas fa-user-check"></i> Trained & Experienced Electricians</li>
+                    <li><i class="fas fa-clock"></i> On-time Project Completion</li>
+                    <li><i class="fas fa-certificate"></i> 100% Safety Guarantee</li>
+                </ul>
+                <p><strong>Founder,  RONY Electricals</strong> — with a vision to electrify India safely.</p>
+            </div>
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1621905251918-48416bd8575a?w=600&h=500&fit=crop" alt="Expert electricians at RONY Electricals working on panel" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section with ACTUAL PROJECT IMAGES -->
+    <section id="projects" class="container" style="padding: 5rem 0;">
+        <div class="section-header">
+            <h2>Our Recent Projects</h2>
+            <p>Delivering excellence across sectors — residential to industrial</p>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <img class="project-img" src="https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=500&h=240&fit=crop" alt="Modern house wiring project completed by Singh Electricals" loading="lazy">
+                <h3>Smart Township Project</h3>
+                <p>Complete wiring & automation for 200+ villas in Kanpur.</p>
+            </div>
+            <div class="project-card">
+                <img class="project-img" src="https://static.vecteezy.com/system/resources/thumbnails/031/610/222/small_2x/image-of-an-electrician-reading-a-multimeter-on-an-electrical-panel-industrial-machinery-stocks-ai-generative-photo.jpg" alt="Industrial control panel upgrade and safety systems"
+                    loading="lazy">
+                <h3>Industrial Panel Upgrade</h3>
+                <p>High-voltage safety systems for manufacturing unit.</p>
+            </div>
+            <div class="project-card">
+                <img class="project-img" src="https://images.unsplash.com/photo-1558002038-1055907df827?w=500&h=240&fit=crop" alt="CCTV and security lighting commercial installation" loading="lazy">
+                <h3>CCTV & Security Lighting</h3>
+                <p>Commercial complex surveillance & energy-saving LED setup.</p>
+            </div>
+        </div>
+        <div class="view-all"><a href="#contact">Request Portfolio →</a></div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" style="background: #fefcf5; padding: 5rem 0;">
+        <div class="container">
+            <div class="section-header">
+                <h2>❤️ Client's Say</h2>
+                <p>Our happy clients & trusted partners</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card"><i class="fas fa-quote-left"></i>
+                    <p>“Excellent work! The team was professional, on time and very trustworthy. Complete house wiring done without any mess. Highly recommended!”</p>
+                    <div class="client-name">Ramesh Verma</div>
+                    <div class="client-title">Business Owner</div>
+                </div>
+                <div class="testimonial-card"><i class="fas fa-quote-left"></i>
+                    <p>“Great service and support. Our factory’s electrical overhaul was done before deadline. The safety standards are top notch.”</p>
+                    <div class="client-name">Anil Sharma</div>
+                    <div class="client-title">Factory Director</div>
+                </div>
+                <div class="testimonial-card"><i class="fas fa-quote-left"></i>
+                    <p>“CCTV installation and wiring done neatly. Very punctual and modern approach. 10/10 for professionalism.”</p>
+                    <div class="client-name">Pooja Agarwal</div>
+                    <div class="client-title">Homeowner</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container contact-grid">
+            <div class="contact-info">
+                <h3><i class="fas fa-envelope-open-text"></i> Send Us a Message</h3>
+                <div class="contact-detail">
+                    <p><i class="fas fa-map-marker-alt"></i> 123, Bhagwanpur vaishali, Bihar,- 844114</p>
+                    <p><i class="fas fa-phone-alt"></i> +91 99999 99999</p>
+                    <p><i class="fas fa-envelope"></i> connect@ronyelectricals.com</p>
+                </div>
+                <div style="margin-top: 2rem;">
+                    <i class="fas fa-clock" style="color: var(--accent-gold);"></i> Mon-Sat: 8AM – 8PM | Emergency 24/7
+                </div>
+            </div>
+            <div class="contact-form">
+                <h3>Request a Callback</h3>
+                <form id="contactForm">
+                    <div class="form-group"><input type="text" id="name" placeholder="Your Name *" required></div>
+                    <div class="form-group"><input type="tel" id="phone" placeholder="Phone Number *" required></div>
+                    <div class="form-group"><textarea rows="4" id="message" placeholder="Tell us about your project..."></textarea></div>
+                    <button type="submit" class="btn-gold" style="width: 100%;"><i class="fas fa-paper-plane"></i> Submit Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>⚡ RONY Electricals — Powering your world with integrity & safety.</p>
+            <div class="credit">Designated with 💡 by Shivam_singh | © Rony 2026 All Rights Reserved</div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu + form handling + active link -->
+    <script>
+        // Mobile Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        if (menuToggle) {
+            menuToggle.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+            });
+        }
+
+        // Close menu when clicking any nav link (smooth close + scroll)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 880) {
+                    navLinks.classList.remove('active');
+                }
+                const targetId = link.getAttribute('href');
+                if (targetId && targetId !== '#') {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    } else if (targetId === '#home') {
+                        e.preventDefault();
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+                if (link.classList.contains('call-now')) return;
+            });
+        });
+
+        // Get a Quote button smooth scroll to contact
+        const quoteBtn = document.querySelector('.btn-gold[href="#contact"]');
+        if (quoteBtn) {
+            quoteBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const contactSec = document.getElementById('contact');
+                if (contactSec) contactSec.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        }
+
+        // Form submission handler
+        const form = document.getElementById('contactForm');
+        if (form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('name') ? .value.trim();
+                const phone = document.getElementById('phone') ? .value.trim();
+                const message = document.getElementById('message') ? .value.trim();
+                if (!name || !phone) {
+                    alert("❌ Please fill Name and Phone Number to proceed.");
+                    return;
+                }
+                if (phone.length < 10 || isNaN(phone)) {
+                    alert("📞 Please enter a valid 10-digit phone number.");
+                    return;
+                }
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault(); // Page refresh rokne ke liye
+
+                    let name = document.querySelector('#name').value; // Naam lene ke liye
+
+                    alert(`✅ Thank you ${name}! Our team will contact you soon.`);
+
+                    form.reset(); // Form khali karne ke liye
+                });
+
+                // Active link highlight on scroll
+                const sections = document.querySelectorAll('section, #home');
+                const navItems = document.querySelectorAll('.nav-links a:not(.call-now)');
+                window.addEventListener('scroll', () => {
+                    let current = '';
+                    const scrollPos = window.scrollY + 180;
+                    sections.forEach(section => {
+                        if (section.id) {
+                            const sectionTop = section.offsetTop;
+                            const sectionHeight = section.clientHeight;
+                            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                                current = section.getAttribute('id');
+                            }
+                        }
+                    });
+                    if (window.scrollY === 0) current = 'home';
+                    navItems.forEach(link => {
+                        link.classList.remove('active');
+                        const href = link.getAttribute('href').substring(1);
+                        if (href === current) link.classList.add('active');
+                    });
+                });
+            });
+        }
+    </script>
+</body>
+
+</html>

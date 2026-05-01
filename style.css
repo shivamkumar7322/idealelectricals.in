@@ -1377,10 +1377,10 @@ textarea:focus {
 }
 
 .fa-whatsapp {
-    background: green;
+    
     color: white;
     border-radius: 50px;
-    box-shadow: 5px 2px 30px green;
+  
 }
 
 .fa-facebook-f {
